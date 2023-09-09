@@ -1,5 +1,5 @@
 
-# Clube dos Livros 
+# Clube dos Livros
 
 O Clube dos Livros é um projeto que está em desenvolvimento e que o objetivo seria os usuários a se interagirem através dos livros e suas respectivas categorias. 
 
