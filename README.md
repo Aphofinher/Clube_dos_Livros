@@ -36,4 +36,6 @@ Talvez queria ajustar nosso projeto de acordo com sua criatividade, então:
 
 0bs: Importante lembrar que em breve estará disponível o site do nosso projeto para acessarem!
 
-<img src="../clube-dos-livros/image/tela 2.jpg" width="300em"></img>
+### Informações - Marco 1 
+
+ - Criamos as telas e está na pasta image todos os nossos protótipos.
