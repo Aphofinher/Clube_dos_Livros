@@ -1,5 +1,5 @@
 
-# Clube dos Livros 
+# Clube dos Livros
 
 O Clube dos Livros é um projeto que está em desenvolvimento e que o objetivo seria os usuários a se interagirem através dos livros e suas respectivas categorias. 
 
@@ -35,7 +35,3 @@ Talvez queria ajustar nosso projeto de acordo com sua criatividade, então:
 - Lucas Freire Lopes
 
 0bs: Importante lembrar que em breve estará disponível o site do nosso projeto para acessarem!
-
-### Telas do Protótipo
-
-<img src="../clube-dos-livros/image/tela 2.jpg" width="300em"></img>
