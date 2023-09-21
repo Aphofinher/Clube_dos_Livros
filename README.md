@@ -38,6 +38,26 @@ Talvez queria ajustar nosso projeto de acordo com sua criatividade, então:
 
 ### Informações - Marco 1 
 
- - Criamos as telas e está na pasta image todos os nossos protótipos.
+### Tela Principal - Não logada
+![Tela Principal](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/tela%202.jpg)
 
- - <img src="/image/Tela 4.png">
+### Tela Principal - Logada
+![Tela de Login](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Desktop%20-%208.png)
+
+### Tela de Login 
+![Tela de Login](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Frame%2011.png)
+
+### Tela de Cadastro 
+![Tela de Cadastro](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Tela_3.png)
+
+### Tela de atualização de Perfil 
+![Tela de atualização de Perfil](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Tela%204.png)
+
+### Modelagem Diagrama MER 
+![Modelagem Diagrama MER](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/mer.jpg)
+
+
+
+
+
+
