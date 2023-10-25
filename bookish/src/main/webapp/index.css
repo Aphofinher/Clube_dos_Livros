@@ -91,7 +91,7 @@ section.comments{
 background-color: #D6CCB8;
 border-radius: 75px;
 margin: 60px 120px;
-padding: 66px 120px 0px 119px;
+padding: 50px 0px 100px 10px;
 }
 
 .comments img{
@@ -99,11 +99,25 @@ margin: 0px 0px 173px 74px;
 }
 
 .comments p{
-position: relative;
-font-size: 40px;
-
-margin: 88px 42px 30px 336px;
+font-size: 30px;
+margin: 0px 25px 30px 300px;
 }
+
+p.aspasinicio{
+font-size: 50px;
+margin: 0px 0px 0px 300px
+}
+
+p.aspasfinal{
+font-size: 50px;
+margin: 0px 150px 0px 0px
+}
+
+.nomecomentuser{
+font-size: 25px;
+margin: 00px 00px 00px 20px;
+}
+
 
 .container-connect{
 background-color: #B6AC98;
@@ -133,8 +147,18 @@ margin-top: 28px;
 }
 
 footer{
-background-color: #523C0C;
-padding: 130px
+background: linear-gradient(to bottom right, rgba(147, 128, 86, 100%), rgba(118, 97, 50, 93.28%), rgba(82, 60, 12, 87.17%));
+padding: 130px;
+padding: 50px 0px 250px 10px;
 }
+
+.subtitlefooter{
+font-size: 45px;
+font-weight: bold;
+color: #523C0C;
+margin-top: 20px;
+margin-left: 30px;
+}
+
 
 
