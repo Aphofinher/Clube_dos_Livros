@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UsuarioDAO {
-    public static boolean inserirUsuario(Usuario Obj) {
+    public  boolean inserirUsuario(Usuario Obj) {
 
         boolean retorno = false;
 
