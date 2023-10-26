@@ -16,26 +16,28 @@
 </header>
 
 <main>
-    <div class="main">
-        <div class="forms">
-            <input type="text" placeholder="E-mail:" id="email" name="email">
-            <input type="text" placeholder="Senha:" id="password" name="senha">
-            <input type="text" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
-        </div>
+    <form action="/create-usuario" method="post">
+        <div class="main">
+            <div class="forms">
+                <input type="text" placeholder="E-mail:" id="email" name="email">
+                <input type="text" placeholder="Senha:" id="password" name="senha">
+                <input type="text" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
+            </div>
 
-        <div class="social-buttons">
-            <button class="google-button">
-                <img src="../cadastro/img/logogoogle.svg" alt="">
-                Entrar com o Google
-            </button>
-            <button class="facebook-button">
-                <img src="../cadastro/img/logoface.svg" alt="">
-                Entrar com o Facebook
-            </button>
-        </div>
+            <div class="social-buttons">
+                <button class="google-button">
+                    <img src="../cadastro/img/logogoogle.svg" alt="">
+                    Entrar com o Google
+                </button>
+                <button class="facebook-button">
+                    <img src="../cadastro/img/logoface.svg" alt="">
+                    Entrar com o Facebook
+                </button>
+            </div>
 
-        <button class="atu" role="button">Cadastre-se</button>
-    </div>
+            <button class="atu" role="button">Cadastre-se</button>
+        </div>
+    </form>
 </main>
 </body>
 </html>

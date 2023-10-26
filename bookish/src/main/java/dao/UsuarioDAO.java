@@ -9,7 +9,48 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
+
 public class UsuarioDAO {
+
+
+    public  boolean primeiroCadastroUsuario(Usuario Obj) {
+
+        boolean retorno = false;
+
+        Connection conexao = null;
+
+        String SQL = "INSERT INTO usuario SET email = ? , senha = ?";
+
+
+        try {
+
+            conexao = Conexao.conectar();
+
+            PreparedStatement comandoSQL
+                    = conexao.prepareStatement(SQL);
+
+            comandoSQL.setString(1, Obj.getEmail());
+            comandoSQL.setString(2, Obj.getSenha());
+
+            int linhasAfetadas = comandoSQL.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+
+                retorno = true;
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Erro ao carregar o Driver");
+        } catch (SQLException ex) {
+            System.out.println("Erro no SQL");
+        }
+
+        return retorno;
+
+    }
+
     public  boolean inserirUsuario(Usuario Obj) {
 
         boolean retorno = false;

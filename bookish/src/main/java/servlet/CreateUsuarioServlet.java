@@ -5,6 +5,7 @@ import model.Usuario;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -12,20 +13,22 @@ import java.io.IOException;
 
 @WebServlet("/create-usuario")
 
-public class CreateUsuarioServlet {
+public class CreateUsuarioServlet extends HttpServlet {
 
-    //@Override
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
-        String usuarioEmail = req.getParameter("email");
-        String usuarioSenha = req.getParameter("senha");
-        String confirmaSenha = req.getParameter("confirmaSenha");
 
-        Usuario usuario = new Usuario(usuarioEmail, usuarioSenha);
+            String usuarioEmail = req.getParameter("email");
+            String usuarioSenha = req.getParameter("senha");
+            String confirmaSenha = req.getParameter("confirmaSenha");
 
-         new UsuarioDAO().inserirUsuario(usuario);
+            Usuario usuario = new Usuario(usuarioEmail, usuarioSenha);
 
-        req.getRequestDispatcher("cadastro.html").forward(req, resp);
+            new UsuarioDAO().primeiroCadastroUsuario(usuario);
+
+            req.getRequestDispatcher("index.html").forward(req, resp);
+
 
     }
 
