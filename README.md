@@ -39,23 +39,41 @@ Talvez queria ajustar nosso projeto de acordo com sua criatividade, então:
 ### Informações - Marco 1 
 
 ### Tela Principal - Não logada
-![Tela Principal](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/tela%202.jpg)
+![Tela Principal](./bookish/src/main/webapp/images-index/tela%202.jpg)
 
 ### Tela Principal - Logada
-![Tela de Login](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Desktop%20-%208.png)
+![Tela de Login](./bookish/src/main/webapp/images-index/Desktop%20-%208.png)
 
 ### Tela de Login 
-![Tela de Login](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Frame%2011.png)
+![Tela de Login](./bookish/src/main/webapp/images-index/Frame%2011.png)
 
 ### Tela de Cadastro 
-![Tela de Cadastro](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Tela_3.png)
+![Tela de Cadastro](./bookish/src/main/webapp/images-index/Tela_3.png)
 
 ### Tela de atualização de Perfil 
-![Tela de atualização de Perfil](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/Tela%204.png)
+![Tela de atualização de Perfil](./bookish/src/main/webapp/images-index/Tela%204.png)
 
 ### Modelagem Diagrama MER 
-![Modelagem Diagrama MER](https://github.com/Aphofinher/clube-dos-livros/blob/main/image/mer.jpg)
+![Modelagem Diagrama MER](./bookish/src/main/webapp/images-index/mer.jpg)
 
+
+### Script BD
+CREATE TABLE USUARIO (
+EMAIL VARCHAR(50) PRIMARY KEY,
+NOME VARCHAR(50),
+SENHA VARCHAR(20),
+CATEGORIAUSUARIO VARCHAR(50),
+LIVROS VARCHAR(50),
+REDESOCIAL VARCHAR(30)
+);
+
+CREATE TABLE LIVRO (
+IDLIVRO INT PRIMARY KEY AUTO_INCREMENT,
+NOMELIVRO VARCHAR (50),
+CATEGORIALIVRO VARCHAR (50),
+SINOPSE VARCHAR (300),
+DATALIVRO DATE
+);
 
 
 

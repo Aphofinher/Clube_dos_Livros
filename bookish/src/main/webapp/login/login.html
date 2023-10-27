@@ -1,13 +1,31 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tela de Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<h2>Aqui será a tela de LOGIN</h2>
+<header>
+    <img src="../login/img/voltar.svg" alt="botão voltar" id="voltar">
+    <img src="../login/img/logo-meio.svg" alt="logo meio" id="logo_meio">
+    <img src="../login/img/logo-pequena.svg" alt="logo pequena" id="logo_pequena">
+
+
+</header>
+
+<main>
+    <form action="/create-usuario" method="post">
+        <div class="main">
+            <div class="forms">
+                <input type="text" placeholder="E-mail:" id="email" name="email">
+                <input type="password" placeholder="Senha:" id="password" name="senha">
+
+                <button class="atu" role="button">Cadastre-se</button>
+            </div>
+        </div>
+    </form>
+</main>
 </body>
 </html>

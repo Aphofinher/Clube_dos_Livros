@@ -9,8 +9,49 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
+
 public class UsuarioDAO {
-    public static boolean inserirUsuario(Usuario Obj) {
+
+
+    public  boolean primeiroCadastroUsuario(Usuario Obj) {
+
+        boolean retorno = false;
+
+        Connection conexao = null;
+
+        String SQL = "INSERT INTO usuario SET email = ? , senha = ?";
+
+
+        try {
+
+            conexao = Conexao.conectar();
+
+            PreparedStatement comandoSQL
+                    = conexao.prepareStatement(SQL);
+
+            comandoSQL.setString(1, Obj.getEmail());
+            comandoSQL.setString(2, Obj.getSenha());
+
+            int linhasAfetadas = comandoSQL.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+
+                retorno = true;
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Erro ao carregar o Driver");
+        } catch (SQLException ex) {
+            System.out.println("Erro no SQL");
+        }
+
+        return retorno;
+
+    }
+
+    public  boolean inserirUsuario(Usuario Obj) {
 
         boolean retorno = false;
 
@@ -30,7 +71,6 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
             comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setInt(4, Obj.getId());
             comandoSQL.setString(5, Obj.getCategoriaUsuario());
             comandoSQL.setString(6, Obj.getLivros());
             comandoSQL.setString(8, Obj.getRedeSocial());
@@ -78,7 +118,6 @@ public class UsuarioDAO {
 
                     Usuario obj = new Usuario();
 
-                    obj.setId(rs.getInt("id"));
                     obj.setNome(rs.getString("nome"));
                     obj.setEmail(rs.getString("email"));
                     obj.setSenha(rs.getString("senha"));
@@ -125,7 +164,6 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
             comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setInt(4, Obj.getId());
             comandoSQL.setString(5, Obj.getCategoriaUsuario());
             comandoSQL.setString(6, Obj.getLivros());
             comandoSQL.setString(8, Obj.getRedeSocial());
@@ -179,6 +217,8 @@ public class UsuarioDAO {
 
         return retorno;
     }
+
+
 
 
 }

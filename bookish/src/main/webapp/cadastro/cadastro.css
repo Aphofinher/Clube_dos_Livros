@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #938056;
+    height: 40vh;
+    display: flex;
+}
+
+#voltar {
+    width: 1vw;
+    padding-right: 25rem;
+    margin-top: -15rem;
+    margin-left: 1rem;
+}
+
+#logo_meio {
+    width: 40vw;
+    padding-right: 13rem;
+    margin-top: -5rem;
+}
+
+#logo_pequena {
+    margin-top: -13rem;
+    margin-left: 12rem;
+    width: 6vw;
+}
+
+.main {
+    width: 45vw;
+    height: 60vh;
+    margin-top: -4.8rem;
+    margin-left: 24rem;
+    border-radius: 18px;
+    background-color: #EEE6D5;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    padding-top: 7rem;
+    margin-left: 7rem;
+}
+
+.forms input {
+    margin-bottom: 2rem;
+    height: 5vh;
+    margin-left: 5rem;
+    font-family: 'Hammersmith One', sans-serif;
+    padding-left: 2rem;
+    color: #a9a9a9;
+
+}
+
+.atu {
+    appearance: none;
+    background-color: #796650;
+    border: none;
+    border-radius: 30px;
+    box-sizing: border-box;
+    color: #C5B188;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 20vw;
+    will-change: transform;
+    height: 7vh;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-top: 250px;
+    margin-left: 11rem;
+}
+
+.atu:disabled {
+    pointer-events: none;
+}
+
+.atu:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.atu:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.google-button {
+    background-color: #FFFFFF;
+    color: #000000;
+
+}
+
+.google-button > img {
+    width: 1vw;
+}
+
+.facebook-button > img {
+    width: 1vw;
+}
+
+.facebook-button {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.social-buttons {
+    text-align: center;
+    margin-top: 20px;
+    margin-top: -310px;
+    margin-left: 1rem;
+}
+
+.social-buttons button {
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin: 5px auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.social-buttons button:hover {
+    opacity: 0.8;
+}
+
+.botao-cadastro {
+
+    text-decoration: none;
+
+}

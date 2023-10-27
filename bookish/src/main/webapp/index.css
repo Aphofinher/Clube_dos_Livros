@@ -1,0 +1,164 @@
+*{
+    font-family: 'Hammersmith One', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background: linear-gradient(to bottom right, rgba(147, 128, 86, 100%), rgba(118, 97, 50, 93.28%), rgba(82, 60, 12, 87.17%));
+    height: 450px;
+}
+
+.image-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-nome{
+width: 274px;
+height: 106px;
+}
+
+.button{
+border: none;
+font-size: 20px;
+border-radius: 22px;
+margin-right: 40px;
+background-color: #EEE6D5;
+font-weight: bold;
+padding: 16px 24px 15px 34px
+}
+
+hr{
+border: 1px solid black;
+opacity: 19%;
+}
+
+.subtitle{
+font-size: 30px;
+font-weight: bold;
+color: #523C0C;
+margin-top: 120px;
+margin-left: 84px;
+font-size: 50px;
+}
+
+p.info-livros {
+    color: #523C0C;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 146px;
+    text-align: center;
+}
+
+div.livros{
+display:flex;
+justify-content:center;
+margin-top: 83px;
+}
+
+.livros div:nth-child(2),
+        div:nth-child(3),
+        div:nth-child(4){
+margin-left: 100px;
+}
+
+p.titulo-livro{
+text-align: center;
+margin-top: 17px;
+}
+
+p.autor-livro{
+text-align: center;
+margin-top: 7px;
+}
+
+div.livro1{
+background-color: #D6CCB8;
+padding: 26px 30px 10px 30px;
+}
+
+.info-comment{
+   color: #523C0C;
+   font-size: 32px;
+   font-weight: bold;
+   text-align: center;
+   margin-top: 114px;
+}
+
+section.comments{
+background-color: #D6CCB8;
+border-radius: 75px;
+margin: 60px 120px;
+padding: 50px 0px 100px 10px;
+}
+
+.comments img{
+margin: 0px 0px 173px 74px;
+}
+
+.comments p{
+font-size: 30px;
+margin: 0px 25px 30px 300px;
+}
+
+p.aspasinicio{
+font-size: 50px;
+margin: 0px 0px 0px 300px
+}
+
+p.aspasfinal{
+font-size: 50px;
+margin: 0px 150px 0px 0px
+}
+
+.nomecomentuser{
+font-size: 25px;
+margin: 00px 00px 00px 20px;
+}
+
+
+.container-connect{
+background-color: #B6AC98;
+border-radius: 75px;
+margin: 89px 200px;
+padding: 28px 96px 40px 130px
+}
+
+section .connect{
+display: flex;
+justify-content: space-around;
+}
+
+.main-connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div .main-connect p{
+font-size: 32px;
+font-weight: bold;
+}
+
+.main-connect img{
+margin-top: 28px;
+}
+
+footer{
+background: linear-gradient(to bottom right, rgba(147, 128, 86, 100%), rgba(118, 97, 50, 93.28%), rgba(82, 60, 12, 87.17%));
+padding: 130px;
+padding: 50px 0px 250px 10px;
+}
+
+.subtitlefooter{
+font-size: 45px;
+font-weight: bold;
+color: #523C0C;
+margin-top: 20px;
+margin-left: 30px;
+}
+
+
+

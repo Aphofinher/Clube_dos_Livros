@@ -5,9 +5,75 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bookish Bounding</title>
+    <link rel="stylesheet" href="logada.css">
+
+    <title>Tela Logada</title>
+
 </head>
 <body>
+<header>
+    <div class="image-button">
+        <img class="logo-nome" src="/src/main/webapp/images-index/logoNome.png" alt="Imagem Logo">
+    </div>
+    <div class="search-bar">
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar">
+            <button type="submit">
+                <img src="icone-lupa.png" alt="Ícone de Pesquisa">
+            </button>
+        </div>
+    </div>
 
+<div id="menu">
+    <ul class="menu-esquerdo">
+        <li><a href="#">Clássicos</a></li>
+        <li><a href="#">Psicologia</a></li>
+        <li><a href="#">Finanças</a></li>
+        <li><a href="#">Romance</a></li>
+        <li><a href="#">Terror</a></li>
+        <li><a href="#">Drama</a></li>
+        <li><a href="#">Ação e Aventura</a></li>
+        <li><a href="#">Biografia</a></li>
+    </ul>
+</div>
+<div id="content" style="margin-left: 250px; padding: 20px;"></div>
+
+    <section class="comments">
+        <img align="left" src="../cadastro/img/foto-murilo.png">
+        <span class="nomecomentuser">Murilo Santos</span>
+
+        <textarea class="comment-box" placeholder="Digite seu comentário"></textarea>
+    </section>
+
+    <section class="comment-list-section">
+        <h2>Amigos -</h2>
+        <ul class="comment-list">
+            <li>
+                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 1">
+                <span class="comment-name">Murilo Santos</span>
+            </li>
+            <li>
+                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 2">
+                <span class="comment-name">Murilo Santos</span>
+            </li>
+            <li>
+                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 3">
+                <span class="comment-name">Murilo Santos</span>
+            </li>
+            <li>
+                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 5">
+                <span class="comment-name">Murilo Santos</span>
+            </li>
+        </ul>
+    </section>
+
+    <div class="button-container">
+        <button class="left-button">Selecione um livro</button>
+        <button class="right-button">Publicar</button>
+    </div>
+
+<!--    <footer>-->
+<!--        <p class="subtitlefooter">Bookish bounding</p>-->
+<!--    </footer>-->
 </body>
 </html>
