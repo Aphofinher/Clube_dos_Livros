@@ -21,13 +21,19 @@ height: 106px;
 }
 
 .button{
+cursor: pointer;
 border: none;
 font-size: 20px;
 border-radius: 22px;
 margin-right: 40px;
 background-color: #EEE6D5;
 font-weight: bold;
-padding: 16px 24px 15px 34px
+padding: 16px 24px 15px 34px;
+}
+
+.button > a{
+text-decoration: none;
+color: inherit;
 }
 
 hr{

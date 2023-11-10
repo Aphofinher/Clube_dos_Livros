@@ -7,25 +7,22 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<header>
-    <img src="../login/img/voltar.svg" alt="botão voltar" id="voltar">
-    <img src="../login/img/logo-meio.svg" alt="logo meio" id="logo_meio">
-    <img src="../login/img/logo-pequena.svg" alt="logo pequena" id="logo_pequena">
 
+<section class="container">
+    <h1>Faça seu Login</h1>
+    <div class="forms">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Senha">
+    </div>
 
-</header>
+    <button class="atu">Entrar</button>
 
-<main>
-    <form action="/create-usuario" method="post">
-        <div class="main">
-            <div class="forms">
-                <input type="text" placeholder="E-mail:" id="email" name="email">
-                <input type="password" placeholder="Senha:" id="password" name="senha">
+    <hr>
 
-                <button class="atu" role="button">Cadastre-se</button>
-            </div>
-        </div>
-    </form>
-</main>
+    <p class="container-cadastro">Não tem cadastro?</p>
+
+    <button class="atu" style="background-color: #F0D69E; color: #796650"><a href="../cadastro/cadastro.html">Cadastre-se</a></button>
+</section>
+
 </body>
 </html>

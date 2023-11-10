@@ -5,57 +5,40 @@
     margin: 0;
 }
 
-header {
+body{
+    background-color: #D7CAAF;
+}
+
+.container{
     background-color: #938056;
-    height: 40vh;
-    display: flex;
-}
-
-#voltar {
-    width: 1vw;
-    padding-right: 25rem;
-    margin-top: -15rem;
-    margin-left: 1rem;
-}
-
-#logo_meio {
-    width: 40vw;
-    padding-right: 13rem;
-    margin-top: -5rem;
-}
-
-#logo_pequena {
-    margin-top: -13rem;
-    margin-left: 12rem;
-    width: 6vw;
-}
-
-.main {
-    width: 40vw;
-    height: 45vh;
-    margin-top: -4.8rem;
-    margin-left: 27rem;
+    width: 30vw;
+    height: 65vh;
+    margin: 100px auto;
     border-radius: 18px;
-    background-color: #EEE6D5;
 }
 
-.forms {
+h1{
+    font-family: 'Hammersmith One', sans-serif;
+    color: #523C0C;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    padding-top: 1rem;
+}
+
+.forms{
     display: flex;
     flex-direction: column;
-    width: 25vw;
-    padding-top: 7rem;
-    margin-left: 7rem;
+    margin: 0 100px auto;
+    margin-top: 30px;
 }
 
-.forms input {
+.forms input{
     margin-bottom: 2rem;
+    border: none;
     height: 5vh;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-family: 'Hammersmith One', sans-serif;
-    padding-left: 2rem;
-    align-items: center;
-
+    padding-left: 1rem;
 }
 
 .atu {
@@ -73,80 +56,47 @@ header {
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    min-width: 0;
-    outline: none;
     padding: 16px 24px;
-    text-align: center;
     text-decoration: none;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
-    width: 20vw;
-    will-change: transform;
-    height: 7vh;
-    font-weight: 100;
-    letter-spacing: 1px;
-    margin-left: 38px;
-}
+    width: 15vw;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-.atu:disabled {
+  .atu:disabled {
     pointer-events: none;
-}
+  }
 
-.atu:hover {
+  .atu:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
-}
+  }
 
-.atu:active {
+  .atu:active {
     box-shadow: none;
     transform: translateY(0);
+  }
+
+  .link-cad{
+  text-decoration: none;
+  color: inherit;
+  }
+
+hr{
+border: 1px solid black;
+opacity: 20%
 }
 
-.google-button {
-    background-color: #FFFFFF;
-    color: #000000;
-
+.container-cadastro{
+font-family: 'Hammersmith One', sans-serif;
+font-size: 20px;
+margin: 10px;
 }
 
-.google-button > img {
-    width: 1vw;
-}
-
-.facebook-button > img {
-    width: 1vw;
-}
-
-.facebook-button {
-    background-color: #FFFFFF;
-    color: #000000;
-}
-
-.social-buttons {
-    text-align: center;
-    margin-top: 20px;
-    margin-top: -310px;
-    margin-left: 1rem;
-}
-
-.social-buttons button {
-    display: block;
-    width: 200px;
-    height: 40px;
-    margin: 5px auto;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.social-buttons button:hover {
-    opacity: 0.8;
-}
-
-.botao-cadastro {
-
-    text-decoration: none;
-
+.atu > a{
+text-decoration: none;
+color: inherit;
 }
