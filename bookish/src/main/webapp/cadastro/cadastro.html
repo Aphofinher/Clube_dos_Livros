@@ -7,37 +7,25 @@
     <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-<header>
-    <img src="../cadastro/img/voltar.svg" alt="botão voltar" id="voltar">
-    <img src="../cadastro/img/logo-meio.svg" alt="logo meio" id="logo_meio">
-    <img src="../cadastro/img/logo-pequena.svg" alt="logo pequena" id="logo_pequena">
+    <div class="logos">
+        <a href="../index.html">
+            <img src="img/voltar.png" class="logo-voltar">
+        </a>
+        <img src="img/logo-meio.png" class="logo-meio">
+    </div>
 
-
-</header>
-
-<main>
     <form action="/create-usuario" method="post">
-        <div class="main">
+        <section class="main">
+            <h1>Cadastro</h1>
             <div class="forms">
                 <input type="text" placeholder="E-mail:" id="email" name="email">
-                <input type="text" placeholder="Senha:" id="password" name="senha">
-                <input type="text" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
-            </div>
+                <input type="password" placeholder="Senha:" id="password" name="senha">
+                <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
 
-            <div class="social-buttons">
-                <button class="google-button">
-                    <img src="../cadastro/img/logogoogle.svg" alt="">
-                    Entrar com o Google
-                </button>
-                <button class="facebook-button">
-                    <img src="../cadastro/img/logoface.svg" alt="">
-                    Entrar com o Facebook
-                </button>
+                <button class="atu" role="button">Cadastre-se</button>
             </div>
-
-            <button class="atu" role="button">Cadastre-se</button>
-        </div>
+        </section>
     </form>
-</main>
+
 </body>
 </html>

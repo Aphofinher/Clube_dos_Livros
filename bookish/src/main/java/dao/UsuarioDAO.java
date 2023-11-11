@@ -115,6 +115,7 @@ public class UsuarioDAO {
             comandoSQL.setString(4, Obj.instagram());
 
 
+
             int linhasAfetadas = comandoSQL.executeUpdate();
 
             if (linhasAfetadas > 0) {
@@ -158,7 +159,6 @@ public class UsuarioDAO {
 
                     Usuario obj = new Usuario();
 
-                    obj.setId(rs.getInt("id"));
                     obj.setNome(rs.getString("nome"));
                     obj.setEmail(rs.getString("email"));
                     obj.setSenha(rs.getString("senha"));
@@ -204,7 +204,6 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
             comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setInt(4, Obj.getId());
             comandoSQL.setString(5, Obj.getCategoriaUsuario());
             comandoSQL.setString(6, Obj.getLivros());
             comandoSQL.setString(8, Obj.instagram());
@@ -258,6 +257,8 @@ public class UsuarioDAO {
 
         return retorno;
     }
+
+
 
 
 }

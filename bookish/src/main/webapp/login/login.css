@@ -5,6 +5,7 @@
     margin: 0;
 }
 
+<<<<<<< HEAD
 header {
     background-color: #938056;
     height: 40vh;
@@ -56,6 +57,42 @@ header {
     padding-left: 2rem;
     align-items: center;
 
+=======
+body{
+    background-color: #D7CAAF;
+}
+
+.container{
+    background-color: #938056;
+    width: 30vw;
+    height: 65vh;
+    margin: 100px auto;
+    border-radius: 18px;
+}
+
+h1{
+    font-family: 'Hammersmith One', sans-serif;
+    color: #523C0C;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    padding-top: 1rem;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px auto;
+    margin-top: 30px;
+}
+
+.forms input{
+    margin-bottom: 2rem;
+    border: none;
+    height: 5vh;
+    padding-left: 1rem;
+>>>>>>> eca393c694b81ce8164d8a6885ae97720a48f5d3
 }
 
 .atu {
@@ -73,6 +110,7 @@ header {
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
+<<<<<<< HEAD
     min-width: 0;
     outline: none;
     padding: 16px 24px;
@@ -149,4 +187,49 @@ header {
 
     text-decoration: none;
 
+=======
+    padding: 16px 24px;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    touch-action: manipulation;
+    width: 15vw;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .atu:disabled {
+    pointer-events: none;
+  }
+
+  .atu:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+
+  .atu:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  .link-cad{
+  text-decoration: none;
+  color: inherit;
+  }
+
+hr{
+border: 1px solid black;
+opacity: 20%
+}
+
+.container-cadastro{
+font-family: 'Hammersmith One', sans-serif;
+font-size: 20px;
+margin: 10px;
+}
+
+.atu > a{
+text-decoration: none;
+color: inherit;
+>>>>>>> eca393c694b81ce8164d8a6885ae97720a48f5d3
 }

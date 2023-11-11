@@ -5,7 +5,6 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private int id;
     private String categoriaUsuario;
     private String livros;
     private String instagram;
@@ -19,7 +18,6 @@ public class Usuario {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.id = id;
         this.categoriaUsuario = categoriaUsuario;
         this.livros = livros;
         this.instagram = instagram;
@@ -58,14 +56,6 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getCategoriaUsuario() {
