@@ -8,23 +8,29 @@ public class Usuario {
     private int id;
     private String categoriaUsuario;
     private String livros;
-    private String redeSocial;
+    private String instagram;
 
     public Usuario(String email, String senha) {
         this.email = email;
         this.senha = senha;
     }
 
-    public Usuario(String nome, String email, String senha, int id, String categoriaUsuario, String livros, String redeSocial) {
+    public Usuario(String nome, String email, String senha, int id, String categoriaUsuario, String livros, String instagram) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.id = id;
         this.categoriaUsuario = categoriaUsuario;
         this.livros = livros;
-        this.redeSocial = redeSocial;
+        this.instagram = instagram;
 
 
+    }
+
+    public Usuario(String nome, String livros, String instagram) {
+        this.nome = nome;
+        this.livros = livros;
+        this.instagram = instagram;
     }
 
     public Usuario() {
@@ -78,11 +84,11 @@ public class Usuario {
         this.livros = livros;
     }
 
-    public String getRedeSocial() {
-        return redeSocial;
+    public String instagram() {
+        return instagram;
     }
 
-    public void setRedeSocial(String redeSocial) {
-        this.redeSocial = redeSocial;
+    public void instagram(String instagram) {
+        this.instagram = instagram;
     }
 }

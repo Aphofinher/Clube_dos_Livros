@@ -10,11 +10,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
-
 public class UsuarioDAO {
 
 
-    public  boolean primeiroCadastroUsuario(Usuario Obj) {
+    public boolean primeiroCadastroUsuario(Usuario Obj) {
 
         boolean retorno = false;
 
@@ -51,13 +50,55 @@ public class UsuarioDAO {
 
     }
 
-    public  boolean inserirUsuario(Usuario Obj) {
+    public boolean verificaCredenciais( String email) {
+
+        String SQL = "SELECT * FROM USUARIO WHERE EMAIL";
+
+        Connection conexao = null;
+
+        try {
+
+            conexao = Conexao.conectar();
+
+
+            PreparedStatement comandoSQL
+                    = conexao.prepareStatement(SQL);
+
+            ResultSet rs = comandoSQL.executeQuery();
+
+            while (rs.next()) {
+
+                Usuario usuario = new Usuario();
+
+                email = rs.getString("email");
+
+                if (email.equals(usuario.getEmail())) {
+
+                    return true;
+
+                }
+            }
+
+            conexao.close();
+            return false;
+
+        } catch (Exception e) {
+
+            System.out.println("Error: " + e.getMessage());
+
+            return false;
+        }
+
+
+    }
+
+    public boolean inserirUsuario(Usuario Obj) {
 
         boolean retorno = false;
 
         Connection conexao = null;
 
-        String SQL = "INSERT INTO usuario SET nome = ? , email = ?, senha = ?,"
+        String SQL = "INSERT INTO usuario SET nome = ?"
                 + " categoriausuario = ?, livros = ?, redesocial = ?";
 
 
@@ -69,12 +110,10 @@ public class UsuarioDAO {
                     = conexao.prepareStatement(SQL);
 
             comandoSQL.setString(1, Obj.getNome());
-            comandoSQL.setString(2, Obj.getEmail());
-            comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setInt(4, Obj.getId());
-            comandoSQL.setString(5, Obj.getCategoriaUsuario());
-            comandoSQL.setString(6, Obj.getLivros());
-            comandoSQL.setString(8, Obj.getRedeSocial());
+            comandoSQL.setString(2, Obj.getCategoriaUsuario());
+            comandoSQL.setString(3, Obj.getLivros());
+            comandoSQL.setString(4, Obj.instagram());
+
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
@@ -106,7 +145,7 @@ public class UsuarioDAO {
             // Passo 3 - Preparar o comando SQL
             PreparedStatement comandoSQL
                     = conexao.prepareStatement("SELECT * FROM usuario" +
-                    " WHERE nome like ?" );
+                    " WHERE nome like ?");
 
             comandoSQL.setString(1, nome);
 
@@ -125,8 +164,7 @@ public class UsuarioDAO {
                     obj.setSenha(rs.getString("senha"));
                     obj.setCategoriaUsuario(rs.getString("categoriaUsuario"));
                     obj.setLivros(rs.getString("livros"));
-                    obj.setRedeSocial(rs.getString("redeSocial"));
-
+                    obj.instagram(rs.getString("redeSocial"));
 
 
                     //Passo o objeto para a lista de retorno
@@ -169,7 +207,7 @@ public class UsuarioDAO {
             comandoSQL.setInt(4, Obj.getId());
             comandoSQL.setString(5, Obj.getCategoriaUsuario());
             comandoSQL.setString(6, Obj.getLivros());
-            comandoSQL.setString(8, Obj.getRedeSocial());
+            comandoSQL.setString(8, Obj.instagram());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
