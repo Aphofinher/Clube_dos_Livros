@@ -7,25 +7,85 @@
     <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <div class="logos">
-        <a href="../index.html">
-            <img src="img/voltar.png" class="logo-voltar">
-        </a>
-        <img src="img/logo-meio.png" class="logo-meio">
-    </div>
+<div class="logos">
+    <a href="/login/login.html">
+        <img src="img/voltar.png" class="logo-voltar">
+    </a>
+    <img src="img/logo-meio.png" class="logo-meio">
+</div>
 
-    <form action="/create-usuario" method="post">
-        <section class="main">
-            <h1>Cadastro</h1>
-            <div class="forms">
-                <input type="text" placeholder="E-mail:" id="email" name="email">
-                <input type="password" placeholder="Senha:" id="password" name="senha">
-                <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
+<form action="/create-usuario" method="post" id="formulario-principal">
+    <section class="main">
+        <h1>Cadastro</h1>
+        <div class="forms">
+            <input type="text" placeholder="E-mail:" id="email" name="email">
+            <input type="password" placeholder="Senha:" id="senha" name="senha">
+            <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
 
-                <button class="atu" role="button">Cadastre-se</button>
+            <button class="atu" type="button" role="button" onclick="enviarSolicitacao()">Cadastre-se</button>
+            <div class="esconder-componente estilo-aviso" role="alert" id="sucesso">
+                Cadastro realizado !
             </div>
-        </section>
-    </form>
+            <div class="esconder-componente estilo-aviso" role="alert" id="erro">
+                As senhas não coincidem !
+            </div>
+        </div>
+    </section>
+</form>
+
 
 </body>
 </html>
+
+<script>
+
+
+    function enviarSolicitacao() {
+
+        let senha = document.getElementById('senha').value;
+        let confirmaSenha = document.getElementById('confirmaSenha').value;
+
+        if (senha === confirmaSenha) {
+
+            document.getElementById('formulario-principal').submit();
+            let sucesso = document.getElementById('sucesso');
+            sucesso.classList.remove('esconder-compenente');
+
+            setTimeout(5000, () => {
+                sucesso.classList.add('esconder-compenente');
+                document.location.href='index.hmtl';
+            });
+
+        } else {
+
+            let erro = document.getElementById('erro');
+            erro.classList.remove('esconder-componente');
+
+            setTimeout(5000, () => {
+                erro.classList.add('esconder-componente');
+            });
+
+        }
+
+    }
+</script>
+
+<style>
+
+    .esconder-componente {
+
+        display: none;
+
+    }
+
+    .estilo-aviso{
+
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+
+
+    }
+
+</style>

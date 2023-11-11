@@ -19,7 +19,7 @@ public class UsuarioDAO {
 
         Connection conexao = null;
 
-        String SQL = "INSERT INTO usuario SET email = ? , senha = ?";
+        String SQL = "INSERT INTO usuario (email, senha) values (?,?)";
 
 
         try {
@@ -43,14 +43,14 @@ public class UsuarioDAO {
         } catch (ClassNotFoundException ex) {
             System.out.println("Erro ao carregar o Driver");
         } catch (SQLException ex) {
-            System.out.println("Erro no SQL");
+            System.out.println("Erro no SQL"+ex.getMessage());
         }
 
         return retorno;
 
     }
 
-    public boolean verificaCredenciais( String email) {
+    public boolean verificaCredenciais(String email) {
 
         String SQL = "SELECT * FROM USUARIO WHERE EMAIL";
 
@@ -113,7 +113,6 @@ public class UsuarioDAO {
             comandoSQL.setString(2, Obj.getCategoriaUsuario());
             comandoSQL.setString(3, Obj.getLivros());
             comandoSQL.setString(4, Obj.instagram());
-
 
 
             int linhasAfetadas = comandoSQL.executeUpdate();
@@ -206,7 +205,7 @@ public class UsuarioDAO {
             comandoSQL.setString(3, Obj.getSenha());
             comandoSQL.setString(5, Obj.getCategoriaUsuario());
             comandoSQL.setString(6, Obj.getLivros());
-            comandoSQL.setString(8, Obj.instagram());
+            //comandoSQL.setString(8, Obj.instagram());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
@@ -257,8 +256,6 @@ public class UsuarioDAO {
 
         return retorno;
     }
-
-
 
 
 }

@@ -18,17 +18,14 @@ public class CreateUsuarioServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
+        String usuarioEmail = req.getParameter("email");
+        String usuarioSenha = req.getParameter("senha");
 
-            String usuarioEmail = req.getParameter("email");
-            String usuarioSenha = req.getParameter("senha");
-            String confirmaSenha = req.getParameter("confirmaSenha");
+        Usuario usuario = new Usuario(usuarioEmail, usuarioSenha);
 
-            Usuario usuario = new Usuario(usuarioEmail, usuarioSenha);
+        new UsuarioDAO().primeiroCadastroUsuario(usuario);
 
-            new UsuarioDAO().primeiroCadastroUsuario(usuario);
-
-            req.getRequestDispatcher("index.html").forward(req, resp);
-
+        req.getRequestDispatcher("index.html").forward(req, resp);
 
     }
 

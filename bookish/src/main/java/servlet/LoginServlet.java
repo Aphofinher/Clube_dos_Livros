@@ -8,7 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-public class VerificaCredenciaisServlet extends HttpServlet{
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,13 +32,13 @@ public class VerificaCredenciaisServlet extends HttpServlet{
 
             req.getSession().setAttribute("loggedUser", email);
 
-            resp.sendRedirect("find-all-cars");
+            resp.sendRedirect("index.html");
 
         } else {
 
             req.setAttribute("mensagem", "Credenciais Inválidas!");
 
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            req.getRequestDispatcher("login.html").forward(req, resp);
 
         }
 
