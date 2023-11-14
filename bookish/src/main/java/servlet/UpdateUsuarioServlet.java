@@ -27,7 +27,7 @@ public class UpdateUsuarioServlet extends HttpServlet {
 
         new UsuarioDAO().primeiroCadastroUsuario(usuario);
 
-        req.getRequestDispatcher("index.html").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
 
 
     }

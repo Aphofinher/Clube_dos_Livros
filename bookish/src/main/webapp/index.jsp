@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -14,7 +15,7 @@
     <div class="image-button">
         <img class="logo-nome" src="/images-index/logoNome.png" alt="Imagem Logo">
 
-        <button class="button"><a href="login/login.html">Login/Cadastre-se</a></button>
+        <button class="button"><a href="login/login.jsp">Login/Cadastre-se</a></button>
 
     </div>
     <hr>

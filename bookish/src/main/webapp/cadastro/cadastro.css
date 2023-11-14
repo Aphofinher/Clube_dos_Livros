@@ -93,4 +93,13 @@ h1{
     transform: translateY(0);
   }
 
+  .esconder-componente {
+    display: none;
+  }
 
+  .estilo-aviso{
+   color: red;
+   font-weight: bold;
+   text-align: center;
+   margin-top: 10px;
+  }

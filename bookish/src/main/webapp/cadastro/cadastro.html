@@ -18,6 +18,7 @@
     <section class="main">
         <h1>Cadastro</h1>
         <div class="forms">
+            <input type="text" placeholder="Seu nome:" id="nome" name="nome">
             <input type="text" placeholder="E-mail:" id="email" name="email">
             <input type="password" placeholder="Senha:" id="senha" name="senha">
             <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
@@ -33,42 +34,9 @@
     </section>
 </form>
 
-
+<script src="cadastro.js"></script>
 </body>
 </html>
-
-<script>
-
-
-    function enviarSolicitacao() {
-
-        let senha = document.getElementById('senha').value;
-        let confirmaSenha = document.getElementById('confirmaSenha').value;
-
-        if (senha === confirmaSenha) {
-
-            document.getElementById('formulario-principal').submit();
-            let sucesso = document.getElementById('sucesso');
-            sucesso.classList.remove('esconder-compenente');
-
-            setTimeout(5000, () => {
-                sucesso.classList.add('esconder-compenente');
-                document.location.href='index.hmtl';
-            });
-
-        } else {
-
-            let erro = document.getElementById('erro');
-            erro.classList.remove('esconder-componente');
-
-            setTimeout(5000, () => {
-                erro.classList.add('esconder-componente');
-            });
-
-        }
-
-    }
-</script>
 
 <style>
 

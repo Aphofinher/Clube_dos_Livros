@@ -1,8 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
 </head>
@@ -15,15 +15,18 @@
     <img src="img/logo-meio.png" class="logo-meio">
 </div>
 
+
 <section class="container">
+<form action="/login" method="post">
     <h1>Faça seu Login</h1>
     <div class="forms">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Senha">
+        <input type="email" placeholder="Email" id="email" name="email" required>
+        <input type="password" placeholder="Senha" id="senha" name="senha" required>
+        <p>${requestScope.message}</p>
     </div>
 
-    <button class="atu">Entrar</button>
-
+    <button class="atu" type="submit">Entrar</button>
+</form>
     <hr>
 
     <p class="container-cadastro">Não tem cadastro?</p>

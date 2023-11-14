@@ -14,6 +14,8 @@ public class Usuario {
         this.senha = senha;
     }
 
+
+
     public Usuario(String nome, String email, String senha, int id, String categoriaUsuario, String livros, String instagram) {
         this.nome = nome;
         this.email = email;
@@ -25,10 +27,10 @@ public class Usuario {
 
     }
 
-    public Usuario(String nome, String livros, String instagram) {
+    public Usuario(String nome, String email, String senha) {
         this.nome = nome;
-        this.livros = livros;
-        this.instagram = instagram;
+        this.email = email;
+        this.senha = senha;
     }
 
     public Usuario() {

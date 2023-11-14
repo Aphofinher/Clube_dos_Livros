@@ -19,7 +19,7 @@ public class UsuarioDAO {
 
         Connection conexao = null;
 
-        String SQL = "INSERT INTO usuario (email, senha) values (?,?)";
+        String SQL = "INSERT INTO cadastro (nome, email, senha) values (?,?,?)";
 
 
         try {
@@ -29,8 +29,9 @@ public class UsuarioDAO {
             PreparedStatement comandoSQL
                     = conexao.prepareStatement(SQL);
 
-            comandoSQL.setString(1, Obj.getEmail());
-            comandoSQL.setString(2, Obj.getSenha());
+            comandoSQL.setString(1, Obj.getNome());
+            comandoSQL.setString(2, Obj.getEmail());
+            comandoSQL.setString(3, Obj.getSenha());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
@@ -50,9 +51,9 @@ public class UsuarioDAO {
 
     }
 
-    public boolean verificaCredenciais(String email) {
+    public boolean verificaCredenciais(Usuario user) {
 
-        String SQL = "SELECT * FROM USUARIO WHERE EMAIL";
+        String SQL = "SELECT * FROM CADASTRO WHERE EMAIL = ?";
 
         Connection conexao = null;
 
@@ -60,22 +61,19 @@ public class UsuarioDAO {
 
             conexao = Conexao.conectar();
 
+            PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
 
-            PreparedStatement comandoSQL
-                    = conexao.prepareStatement(SQL);
+            comandoSQL.setString(1, user.getEmail());
 
             ResultSet rs = comandoSQL.executeQuery();
 
+            System.out.println("sucesso ao executar query");
             while (rs.next()) {
 
-                Usuario usuario = new Usuario();
+            String senha = rs.getString("senha");
 
-                email = rs.getString("email");
-
-                if (email.equals(usuario.getEmail())) {
-
-                    return true;
-
+            if(senha.equals(user.getSenha())){
+                return true;
                 }
             }
 

@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getRequestDispatcher("login.html").forward(req, resp);
+        req.getRequestDispatcher("login.jsp").forward(req, resp);
 
     }
 
@@ -25,20 +25,19 @@ public class LoginServlet extends HttpServlet{
         String senha = req.getParameter("senha");
 
         Usuario usuario = new Usuario(email, senha);
-
-        boolean isValidUser = new UsuarioDAO().verificaCredenciais(email);
+        boolean isValidUser = new UsuarioDAO().verificaCredenciais(usuario);
 
         if (isValidUser) {
 
             req.getSession().setAttribute("loggedUser", email);
 
-            resp.sendRedirect("index.html");
+            resp.sendRedirect("Logada/logada.jsp");
 
         } else {
 
-            req.setAttribute("mensagem", "Credenciais Inválidas!");
+            req.setAttribute("message", "Usuário ou senha inválidos!!");
 
-            req.getRequestDispatcher("login.html").forward(req, resp);
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
 
         }
 
