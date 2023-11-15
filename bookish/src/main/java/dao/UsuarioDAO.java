@@ -53,7 +53,7 @@ public class UsuarioDAO {
 
     public boolean verificaCredenciais(Usuario user) {
 
-        String SQL = "SELECT * FROM CADASTRO WHERE EMAIL = ?";
+        String SQL = "SELECT * FROM USUARIO WHERE EMAIL = ? AND SENHA= ?";
 
         Connection conexao = null;
 
@@ -64,15 +64,18 @@ public class UsuarioDAO {
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
 
             comandoSQL.setString(1, user.getEmail());
+            comandoSQL.setString(2, user.getSenha());
+
 
             ResultSet rs = comandoSQL.executeQuery();
 
             System.out.println("sucesso ao executar query");
             while (rs.next()) {
 
+            String email = rs.getString("email");
             String senha = rs.getString("senha");
 
-            if(senha.equals(user.getSenha())){
+            if(senha.equals(user.getSenha()) && email.equals(user.getEmail())){
                 return true;
                 }
             }
