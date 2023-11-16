@@ -1,6 +1,7 @@
 package dao;
 
-import Ferramentas.Conexao;
+
+import config.ConnectionPoolConfig;
 import model.Categoria;
 import model.Livros;
 
@@ -24,7 +25,7 @@ public class CategoriasDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL
                     = conexao.prepareStatement(SQL);
@@ -59,7 +60,7 @@ public class CategoriasDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             // Passo 3 - Preparar o comando SQL
             PreparedStatement comandoSQL
@@ -110,7 +111,7 @@ public class CategoriasDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL
                     = conexao.prepareStatement(SQL);
@@ -146,7 +147,7 @@ public class CategoriasDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL
                     = conexao.prepareStatement("DELETE FROM categoria WHERE id = ?");

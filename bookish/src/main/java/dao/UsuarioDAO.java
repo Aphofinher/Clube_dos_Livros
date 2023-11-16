@@ -1,6 +1,7 @@
 package dao;
 
-import Ferramentas.Conexao;
+
+import config.ConnectionPoolConfig;
 import model.Usuario;
 
 import java.sql.Connection;
@@ -24,7 +25,7 @@ public class UsuarioDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL
                     = conexao.prepareStatement(SQL);
@@ -59,7 +60,7 @@ public class UsuarioDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
 
@@ -105,7 +106,7 @@ public class UsuarioDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL
                     = conexao.prepareStatement(SQL);
@@ -113,7 +114,7 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getCategoriaUsuario());
             comandoSQL.setString(3, Obj.getLivros());
-            comandoSQL.setString(4, Obj.instagram());
+            comandoSQL.setString(4, Obj.getRedeSocial());
 
 
             int linhasAfetadas = comandoSQL.executeUpdate();
@@ -141,7 +142,7 @@ public class UsuarioDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             // Passo 3 - Preparar o comando SQL
             PreparedStatement comandoSQL
@@ -164,7 +165,7 @@ public class UsuarioDAO {
                     obj.setSenha(rs.getString("senha"));
                     obj.setCategoriaUsuario(rs.getString("categoriaUsuario"));
                     obj.setLivros(rs.getString("livros"));
-                    obj.instagram(rs.getString("redeSocial"));
+                    obj.setRedeSocial(rs.getString("redeSocial"));
 
 
                     //Passo o objeto para a lista de retorno
@@ -196,7 +197,7 @@ public class UsuarioDAO {
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL
                     = conexao.prepareStatement(SQL);
@@ -204,9 +205,9 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
             comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setString(5, Obj.getCategoriaUsuario());
-            comandoSQL.setString(6, Obj.getLivros());
-            //comandoSQL.setString(8, Obj.instagram());
+            comandoSQL.setString(4, Obj.getCategoriaUsuario());
+            comandoSQL.setString(5, Obj.getLivros());
+            comandoSQL.setString(6, Obj.getRedeSocial());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
@@ -226,19 +227,19 @@ public class UsuarioDAO {
 
     }
 
-    public static boolean excluirUsuario(int id) {
+    public static boolean excluirUsuario(String email) {
 
         boolean retorno = false;
         Connection conexao = null;
 
         try {
 
-            conexao = Conexao.conectar();
+            conexao = ConnectionPoolConfig.getConnection();
 
             PreparedStatement comandoSQL
-                    = conexao.prepareStatement("DELETE FROM usuario WHERE id = ?");
+                    = conexao.prepareStatement("DELETE FROM usuario WHERE EMAIL = ?");
 
-            comandoSQL.setInt(1, id);
+            comandoSQL.setString(1, email);
 
 
             int linhasAfetadas = comandoSQL.executeUpdate();
