@@ -11,23 +11,27 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/update-usuario")
+@WebServlet("/alterar-usuario")
 
-public class UpdateUsuarioServlet extends HttpServlet {
+public class AlterarUsuarioServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
 
         String nome = req.getParameter("nome");
-        String instagram = req.getParameter("instagram");
+        String email = req.getParameter("email");
+        String senha = req.getParameter("senha");
         String categorias = req.getParameter("categorias");
+        String livros = req.getParameter("livros");
+        String instagram = req.getParameter("instagram");
 
-        Usuario usuario = new Usuario(nome, instagram, categorias);
 
-        new UsuarioDAO().primeiroCadastroUsuario(usuario);
+        Usuario usuario = new Usuario(nome, email, senha, categorias, livros, instagram);
 
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        new UsuarioDAO().alterarUsuario(usuario);
+
+        req.setAttribute("confirma-alteração", "Usuario alterado com sucesso!");
 
 
     }
