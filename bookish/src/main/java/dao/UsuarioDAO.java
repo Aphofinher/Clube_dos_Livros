@@ -19,7 +19,7 @@ public class UsuarioDAO {
 
         Connection conexao = null;
 
-        String SQL = "INSERT INTO cadastro (nome, email, senha) values (?,?,?)";
+        String SQL = "INSERT INTO USUARIO (nome, email, senha) values (?,?,?)";
 
 
         try {
