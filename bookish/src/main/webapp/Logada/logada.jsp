@@ -46,7 +46,7 @@
     <section class="comments">
         <img align="left" src="../cadastro/img/foto-murilo.png">
         <div class="comments-file">
-        <span class="nomecomentuser">Murilo Santos</span>
+        <span class="nomecomentuser">${Session.scope.Usuario.nome}</span>
         </div>
         <textarea class="comment-box" placeholder="Digite seu comentário"></textarea>
             <div class="button-container">

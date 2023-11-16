@@ -27,7 +27,7 @@ public class AlterarUsuarioServlet extends HttpServlet {
         String instagram = req.getParameter("instagram");
 
 
-        Usuario usuario = new Usuario(nome, email, senha, categorias, livros, instagram);
+        Usuario usuario = new Usuario(nome, email, senha, instagram);
 
         new UsuarioDAO().alterarUsuario(usuario);
 

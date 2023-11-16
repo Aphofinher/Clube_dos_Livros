@@ -20,7 +20,7 @@ public class UsuarioDAO {
 
         Connection conexao = null;
 
-        String SQL = "INSERT INTO USUARIO (nome, email, senha) values (?,?,?)";
+        String SQL = "INSERT INTO USUARIO (nome, email, instagram, senha) values (?,?,?,?)";
 
 
         try {
@@ -32,7 +32,8 @@ public class UsuarioDAO {
 
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
-            comandoSQL.setString(3, Obj.getSenha());
+            comandoSQL.setString(3, Obj.getInstagram());
+            comandoSQL.setString(4, Obj.getSenha());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
@@ -112,9 +113,8 @@ public class UsuarioDAO {
                     = conexao.prepareStatement(SQL);
 
             comandoSQL.setString(1, Obj.getNome());
-            comandoSQL.setString(2, Obj.getCategoriaUsuario());
-            comandoSQL.setString(3, Obj.getLivros());
-            comandoSQL.setString(4, Obj.getRedeSocial());
+            comandoSQL.setString(2, Obj.getInstagram());
+
 
 
             int linhasAfetadas = comandoSQL.executeUpdate();
@@ -163,10 +163,7 @@ public class UsuarioDAO {
                     obj.setNome(rs.getString("nome"));
                     obj.setEmail(rs.getString("email"));
                     obj.setSenha(rs.getString("senha"));
-                    obj.setCategoriaUsuario(rs.getString("categoriaUsuario"));
-                    obj.setLivros(rs.getString("livros"));
-                    obj.setRedeSocial(rs.getString("redeSocial"));
-
+                    obj.setInstagram(rs.getString("categoriaInstagram"));
 
                     //Passo o objeto para a lista de retorno
                     listaRetorno.add(obj);
@@ -205,9 +202,7 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
             comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setString(4, Obj.getCategoriaUsuario());
-            comandoSQL.setString(5, Obj.getLivros());
-            comandoSQL.setString(6, Obj.getRedeSocial());
+            comandoSQL.setString(4, Obj.getInstagram());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
