@@ -240,13 +240,14 @@ button[type="submit"] img {
         }
 
         .info-section img {
-            margin-right: 20px;
+            margin-right: 21px;
         }
 
         .info-section-text {
             display: flex;
             flex-direction: column;
         }
+
 
         .info-section-text h1,
         .info-section-text p {
