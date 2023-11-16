@@ -27,7 +27,7 @@ public class CreateUsuarioServlet extends HttpServlet {
 
         new UsuarioDAO().primeiroCadastroUsuario(usuario);
 
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/login/login.jsp").forward(req, resp);
 
 
     }
