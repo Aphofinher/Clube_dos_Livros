@@ -1,22 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
+<<<<<<< HEAD
 * {
-    font-family: 'Hammersmith One', sans-serif;
     padding: 0;
     margin: 0;
 }
-
-#menu {
-width: 250px;
-background: linear-gradient(270deg, rgba(193, 185, 133, 0.7), rgba(118, 97, 50, 0.7), rgba(82, 60, 12, 0.7));
-color: #fff;
-position: absolute;
-height: 100%;
-}
-
-#menu ul li:hover {
-  background: rgba(85, 85, 85, 0.8);
-}
+=======
+        #menu {
+            width: 250px;
+            background: rgb(193, 185, 133);
+            background: linear-gradient(270deg, rgba(193, 185, 133, 0.7), rgba(118, 97, 50, 0.7), rgba(82, 60, 12, 0.7));
+            color: #fff;
+            position: absolute;
+            height: 100%;
+        }
+>>>>>>> eca393c694b81ce8164d8a6885ae97720a48f5d3
 
 header {
     background-color: #938056;
@@ -24,20 +22,24 @@ header {
     display: flex;
 }
 
-.menu-esquerdo li{
-    list-style: none;
-    color: black;
-    padding: 10px
+#voltar {
+    width: 1vw;
+    padding-right: 25rem;
+    margin-top: -15rem;
+    margin-left: 1rem;
 }
 
-.menu-esquerdo li a{
-    color: inherit;
-    text-decoration: none;
+#logo_meio {
+    width: 40vw;
+    padding-right: 13rem;
+    margin-top: -5rem;
 }
 
-hr{
-    border: 1px solid black;
-    opacity: 18%;
+<<<<<<< HEAD
+#logo_pequena {
+    margin-top: -13rem;
+    margin-left: 12rem;
+    width: 6vw;
 }
 
 .main {
@@ -67,6 +69,62 @@ hr{
 
 }
 
+.atu {
+    appearance: none;
+    background-color: #796650;
+    border: none;
+    border-radius: 30px;
+    box-sizing: border-box;
+    color: #C5B188;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 20vw;
+    will-change: transform;
+    height: 7vh;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-top: 250px;
+    margin-left: 11rem;
+}
+
+.atu:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.google-button {
+    background-color: #FFFFFF;
+    color: #000000;
+
+}
+
+.google-button > img {
+    width: 1vw;
+}
+
+.facebook-button > img {
+    width: 1vw;
+}
+
+.facebook-button {
+    background-color: #FFFFFF;
+    color: #000000;
+}
 
 .social-buttons {
     text-align: center;
@@ -91,13 +149,26 @@ hr{
 }
 
 .botao-cadastro {
-    text-decoration: none;
-}
 
+    text-decoration: none;
+
+}
+=======
+        #menu ul li:hover {
+            background: rgba(85, 85, 85, 0.8);
+        }
         header{
             background: linear-gradient(to bottom right, rgba(147, 128, 86, 100%), rgba(118, 97, 50, 93.28%), rgba(82, 60, 12, 87.17%));
             height: 135px;
         }
+        .Search{
+        align-items: center;
+        }
+        hr{
+        border: 1px solid black;
+        opacity: 19%;
+        }
+
 
         footer{
         background: linear-gradient(to bottom right, rgba(147, 128, 86, 100%), rgba(118, 97, 50, 93.28%), rgba(82, 60, 12, 87.17%));
@@ -108,8 +179,8 @@ hr{
         section.comments{
         background-color: #D6CCB8;
         border-radius: 20px;
-        margin: 50px 300px;
-        padding: 50px 0px 40px 10px;
+        margin: 60px 500px;
+        padding: 50px 0px 100px 10px;
         }
 
 
@@ -121,42 +192,46 @@ section.comments img {
 
 .comment-box {
     width: 98%;
-    height: 300px;
+    height: 300px; /* Altura desejada da caixa de texto */
     resize: none; /* Impede o redimensionamento da caixa de texto pelo usuário */
     margin-top: 20px; /* Define o espaço acima da caixa de texto */
-    margin-bottom: 50px;
-    border: 3px solid #938056;
 }
 
-.comment-box::placeholder{
-font-size: 18px;
-}
-
-.button-container{
+.button-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    margin-top: -130px;
 }
 
 .left-button, .right-button {
-    background-color: #8B4513;
-    color: #fff;
-    padding: 10px 65px;
+    background-color: #8B4513; /* Cor de fundo marrom */
+    color: #fff; /* Cor do texto branca */
+    padding: 10px 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
+    margin: 0 550px; /* Margem negativa para reduzir o espaço entre os botões */
+}
+
+.left-button {
+    margin-right: auto; /* Move o botão da esquerda para o centro */
 }
 
 .nomecomentuser{
 font-weight:bold;
 margin-left: 10px;
-font-size: 20px;
 }
 
 .comment-list-section {
-    position: absolute;
-    right: 20px;
-    top: 175px;
-    margin-right: 19px;
+    position: absolute; /* Define a posição absoluta */
+    right: 0; /* Alinha à direita */
+    top: 150px; /* Define a posição vertical em relação ao topo */
+    margin-right: 20px; /* Define a margem direita */
+}
+
+.comment-list {
+    list-style: none; /* Remove qualquer indicador de lista */
+    padding: 0;
 }
 
 .comment-list {
@@ -188,14 +263,17 @@ font-size: 20px;
 
 .comment-list-section h2 {
     color: #938056;
-    margin-bottom: 18px;
+}
+
+.search-bar {
+    margin: 0 auto;
 }
 
 .info-section{
         background-color: #D6CCB8;
         border-radius: 20px;
-        margin: 60px 400px;
-        padding: 50px 0px 22px 10px;
+        margin: 60px 500px;
+        padding: 50px 0px 100px 10px;
 }
 
 .icon-search{
@@ -210,11 +288,25 @@ font-size: 20px;
     display: flex;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 .comments-file{
 display:flex;
 justify-content: space-between;
 align-items: center;
 }
+
+
 
 input[type="text"] {
     width: 400px; /* Largura do campo de pesquisa */
@@ -240,7 +332,7 @@ button[type="submit"] img {
         }
 
         .info-section img {
-            margin-right: 21px;
+            margin-right: 20px;
         }
 
         .info-section-text {
@@ -248,12 +340,9 @@ button[type="submit"] img {
             flex-direction: column;
         }
 
-
         .info-section-text h1,
         .info-section-text p {
-            margin-bottom: 25px; /* Adicione margem inferior entre os elementos de texto */
-            margin-right: 50px;
-            text-align: justify;
+            margin-bottom: 10px; /* Adicione margem inferior entre os elementos de texto */
         }
 
         .info-section-text button {
@@ -275,3 +364,4 @@ button.button-info {
 .info-section-text-button{
 display: flex;
 }
+>>>>>>> eca393c694b81ce8164d8a6885ae97720a48f5d3
