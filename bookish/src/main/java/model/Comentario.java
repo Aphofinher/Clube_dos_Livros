@@ -6,25 +6,19 @@ public class Comentario {
 
     private int id;
     private String comentario;
-    private int idUsuario;
+    private String email;
     private int idCategoria;
     private LocalDate dataComentario;
 
     public Comentario() {
     }
 
-    public Comentario(String comentario, int idUsuario, int idCategoria) {
-        this.comentario = comentario;
-        this.idUsuario = idUsuario;
-        this.idCategoria = idCategoria;
-        this.dataComentario = LocalDate.now();
-    }
-
-    public Comentario(int id, String comentario, int idUsuario, int idCategoria) {
+    public Comentario(int id, String comentario, String email, int idCategoria, LocalDate dataComentario) {
         this.id = id;
         this.comentario = comentario;
-        this.idUsuario = idUsuario;
+        this.email = email;
         this.idCategoria = idCategoria;
+        this.dataComentario = dataComentario;
     }
 
     public int getId() {
@@ -43,12 +37,12 @@ public class Comentario {
         this.comentario = comentario;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getIdCategoria() {

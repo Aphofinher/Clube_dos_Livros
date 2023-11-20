@@ -3,7 +3,6 @@ package dao;
 
 import config.ConnectionPoolConfig;
 import model.Categoria;
-import model.Livros;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,10 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CategoriasDAO {
+public class CategoriaDAO {
 
 
-    public static boolean inserirCategoria(Categoria Obj) {
+    public boolean inserirCategoria(Categoria Obj) {
 
         boolean retorno = false;
 
@@ -53,7 +52,7 @@ public class CategoriasDAO {
 
     }
 
-    public static ArrayList<Categoria> listarCategoria(String categoria) {
+    public ArrayList<Categoria> listarCategoria() {
 
         ArrayList<Categoria> listaRetorno = new ArrayList<>();
         Connection conexao = null;
@@ -64,10 +63,7 @@ public class CategoriasDAO {
 
             // Passo 3 - Preparar o comando SQL
             PreparedStatement comandoSQL
-                    = conexao.prepareStatement("SELECT * FROM categoria" +
-                    " WHERE categoria like ?");
-
-            comandoSQL.setString(1, categoria);
+                    = conexao.prepareStatement("SELECT * FROM CATEGORIA");
 
             // Passo 4 - Executar o comando
             ResultSet rs = comandoSQL.executeQuery();
@@ -78,12 +74,10 @@ public class CategoriasDAO {
 
                     Categoria obj = new Categoria();
 
-                    obj.setId(rs.getInt("id"));
-                    obj.setCategoria(rs.getString("categoria"));
+                    obj.setCategoria(rs.getString("NOME_CATEGORIA"));
+                    obj.setId(rs.getInt("ID"));
 
 
-
-                    //Passo o objeto para a lista de retorno
                     listaRetorno.add(obj);
 
                 }
@@ -99,7 +93,7 @@ public class CategoriasDAO {
     }
 
 
-    public static boolean alterarCategoria(Categoria Obj) {
+    public boolean alterarCategoria(Categoria Obj) {
 
         boolean retorno = false;
 
@@ -140,7 +134,7 @@ public class CategoriasDAO {
 
     }
 
-    public static boolean excluirCategoria(int id) {
+    public boolean excluirCategoria(int id) {
 
         boolean retorno = false;
         Connection conexao = null;

@@ -20,7 +20,7 @@ public class UsuarioDAO {
 
         Connection conexao = null;
 
-        String SQL = "INSERT INTO USUARIO (nome, email, senha, categoriausuario, livros, redesocial) values (?,?,?,?,?,?)";
+        String SQL = "INSERT INTO USUARIO (nome, email, senha, redesocial) values (?,?,?,?)";
 
 
         try {
@@ -33,9 +33,7 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
             comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setString(4, Obj.getCategoriaUsuario());
-            comandoSQL.setString(5, Obj.getLivros());
-            comandoSQL.setString(6, Obj.getRedeSocial());
+            comandoSQL.setString(4, Obj.getRedeSocial());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
@@ -97,46 +95,6 @@ public class UsuarioDAO {
 
     }
 
-    public boolean inserirUsuario(Usuario Obj) {
-
-        boolean retorno = false;
-
-        Connection conexao = null;
-
-        String SQL = "INSERT INTO usuario SET nome = ?"
-                + " categoriausuario = ?, livros = ?, redesocial = ?";
-
-
-        try {
-
-            conexao = ConnectionPoolConfig.getConnection();
-
-            PreparedStatement comandoSQL
-                    = conexao.prepareStatement(SQL);
-
-            comandoSQL.setString(1, Obj.getNome());
-            comandoSQL.setString(2, Obj.getCategoriaUsuario());
-            comandoSQL.setString(3, Obj.getLivros());
-            comandoSQL.setString(4, Obj.getRedeSocial());
-
-
-            int linhasAfetadas = comandoSQL.executeUpdate();
-
-            if (linhasAfetadas > 0) {
-
-                retorno = true;
-
-            }
-
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Erro ao carregar o Driver");
-        } catch (SQLException ex) {
-            System.out.println("Erro no SQL");
-        }
-
-        return retorno;
-
-    }
 
     public static ArrayList<Usuario> listarUsuario(String nome) {
 
@@ -166,8 +124,6 @@ public class UsuarioDAO {
                     obj.setNome(rs.getString("nome"));
                     obj.setEmail(rs.getString("email"));
                     obj.setSenha(rs.getString("senha"));
-                    obj.setCategoriaUsuario(rs.getString("categoriaUsuario"));
-                    obj.setLivros(rs.getString("livros"));
                     obj.setRedeSocial(rs.getString("redeSocial"));
 
 
@@ -187,15 +143,15 @@ public class UsuarioDAO {
     }
 
 
-    public static boolean alterarUsuario(Usuario Obj) {
+    public boolean alterarUsuario(Usuario Obj) {
 
         boolean retorno = false;
 
         Connection conexao = null;
 
         String SQL = "UPDATE usuario SET nome = ? , email = ?, senha = ?,"
-                + " categoriausuario = ?, livros = ?, redesocial = ?"
-                + " WHERE id = ?";
+                + "redesocial = ?"
+                + " WHERE email = ?";
 
 
         try {
@@ -208,9 +164,7 @@ public class UsuarioDAO {
             comandoSQL.setString(1, Obj.getNome());
             comandoSQL.setString(2, Obj.getEmail());
             comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setString(4, Obj.getCategoriaUsuario());
-            comandoSQL.setString(5, Obj.getLivros());
-            comandoSQL.setString(6, Obj.getRedeSocial());
+            comandoSQL.setString(4, Obj.getRedeSocial());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
@@ -230,7 +184,7 @@ public class UsuarioDAO {
 
     }
 
-    public static boolean excluirUsuario(String email) {
+    public boolean excluirUsuario(String email) {
 
         boolean retorno = false;
         Connection conexao = null;

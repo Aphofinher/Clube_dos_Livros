@@ -17,7 +17,7 @@ public class ComentarioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int idUsuario = Integer.parseInt(req.getParameter("idUsuario"));
+        String idUsuario = req.getParameter("idUsuario");
         String comentario = req.getParameter("comentario");
 
         ArrayList<Comentario> comentarios = ComentarioDAO.listarComentario(idUsuario, comentario);
@@ -35,14 +35,14 @@ public class ComentarioServlet extends HttpServlet {
         String comentario = req.getParameter("comentario");
         int idCategoria = Integer.parseInt(req.getParameter("idCategoria"));
 
-        boolean isCadastrado = ComentarioDAO.inserirComentario(new Comentario(comentario, idUsuario, idCategoria));
+        // boolean isCadastrado = ComentarioDAO.inserirComentario(new Comentario(comentario, idUsuario, idCategoria));
 
-        if (isCadastrado) {
+        //if (isCadastrado) {
             // TODO lógica para sucesso no cadastro
-        } else {
+        //} else {
             // TODO lógica para erro no cadastro
-        }
-    }
+        //}
+   }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) {
@@ -52,13 +52,13 @@ public class ComentarioServlet extends HttpServlet {
         String comentario = req.getParameter("comentario");
         int idCategoria = Integer.parseInt(req.getParameter("idCategoria"));
 
-        boolean isAlterado = ComentarioDAO.editarComentario(new Comentario(id, comentario, idUsuario, idCategoria));
+       // boolean isAlterado = ComentarioDAO.editarComentario(new Comentario(id, comentario, idUsuario, idCategoria));
 
-        if (isAlterado) {
+        //if (isAlterado) {
             // TODO lógica para sucesso no cadastro
-        } else {
+        //} else {
             // TODO lógica para erro no cadastro
-        }
+        //}
     }
 
     @Override

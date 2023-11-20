@@ -1,12 +1,15 @@
 package servlet;
 
+import dao.CategoriaDAO;
 import dao.UsuarioDAO;
+import model.Categoria;
 import model.Usuario;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet{
@@ -28,11 +31,12 @@ public class LoginServlet extends HttpServlet{
 
         boolean isValidUser = new UsuarioDAO().verificaCredenciais(usuario);
 
+
         if (isValidUser) {
 
             req.getSession().setAttribute("loggedUser", email);
 
-            resp.sendRedirect("Logada/logada.jsp");
+            resp.sendRedirect("/retorna-categoria");
 
         } else {
 

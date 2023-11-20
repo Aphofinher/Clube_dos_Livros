@@ -1,7 +1,7 @@
 package servlet;
 
-import dao.ComentarioDAO;
-import model.Comentario;
+import dao.CategoriaDAO;
+import model.Categoria;
 
 
 import javax.servlet.ServletException;
@@ -13,21 +13,19 @@ import java.io.IOException;
 import java.util.List;
 
 
-@WebServlet("/retornar-comentario")
+@WebServlet("/retorna-categoria")
 
-public class RetornaComentárioServlet extends HttpServlet {
-
+public class RetornaCategoriaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
-        String email = req.getParameter("email");
-        String categoria = req.getParameter("categoria");
 
-        List<Comentario> comentario = new ComentarioDAO().listarComentario(email, categoria);
+        List<Categoria> categoria = new CategoriaDAO().listarCategoria();
 
-        req.setAttribute("comentario", comentario);
+        req.setAttribute("categorias", categoria);
+
+        req.getRequestDispatcher("Logada/logada.jsp").forward(req, resp);
 
 
     }
 }
-

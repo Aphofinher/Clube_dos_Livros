@@ -24,7 +24,7 @@ public class ComentarioDAO {
                     = conexao.prepareStatement(SQL);
 
             comandoSQL.setString(1, obj.getComentario());
-            comandoSQL.setInt(2, obj.getIdUsuario());
+            comandoSQL.setString(2, obj.getEmail());
             comandoSQL.setInt(3, obj.getIdCategoria());
             comandoSQL.setDate(4, Date.valueOf(obj.getDataComentario()));
 
@@ -115,7 +115,7 @@ public class ComentarioDAO {
         return retorno;
     }
 
-    public static ArrayList<Comentario> listarComentario(int idUsuario, String categoria) {
+    public static ArrayList<Comentario> listarComentario(String email, String categoria) {
 
         ArrayList<Comentario> listaRetorno = new ArrayList<>();
         Connection conexao = null;
@@ -129,7 +129,7 @@ public class ComentarioDAO {
                     = conexao.prepareStatement("SELECT * FROM comentario" +
                     " WHERE id_usuario = ? AND categoria = ? ORDER BY data_comentario DESC");
 
-            comandoSQL.setInt(1, idUsuario);
+            comandoSQL.setString(1, email);
             comandoSQL.setString(2, categoria);
 
             // Passo 4 - Executar o comando
@@ -143,7 +143,7 @@ public class ComentarioDAO {
 
                     obj.setId(rs.getInt("id"));
                     obj.setComentario(rs.getString("comentario"));
-                    obj.setIdUsuario(rs.getInt("id_usuario"));
+                    obj.setEmail(rs.getString("id_usuario"));
                     obj.setIdCategoria(rs.getInt("id_categoria"));
                     obj.setDataComentario(LocalDate.parse(rs.getDate("data_comentario").toString()));
 
