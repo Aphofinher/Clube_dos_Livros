@@ -24,22 +24,27 @@
 </header>
 <div id="menu">
     <ul class="menu-esquerdo">
-        <li><a href="#">Clássicos</a></li>
+        <li><a href="../atualizar/atualizar.jsp">Perfil</a></li>
         <hr>
-        <li><a href="#">Psicologia</a></li>
-        <hr>
-        <li><a href="#">Finanças</a></li>
-        <hr>
-        <li><a href="#">Romance</a></li>
-        <hr>
-        <li><a href="#">Terror</a></li>
-        <hr>
-        <li><a href="#">Drama</a></li>
+        <li><a href="#">Meus comentários</a></li>
         <hr>
         <li><a href="#">Ação e Aventura</a></li>
         <hr>
         <li><a href="#">Biografia</a></li>
         <hr>
+        <li><a href="#">Clássicos</a></li>
+        <hr>
+        <li><a href="#">Drama</a></li>
+        <hr>
+        <li><a href="#">Finanças</a></li>
+        <hr>
+        <li><a href="#">Psicologia</a></li>
+        <hr>
+        <li><a href="#">Romance</a></li>
+        <hr>
+        <li><a href="#">Terror</a></li>
+        <hr>
+        <li><a href="../index.jsp">Sair</a></li>
     </ul>
 </div>
 
@@ -60,7 +65,6 @@
         </select>
         <textarea class="comment-box" placeholder="Digite seu comentário"></textarea>
             <div class="button-container">
-                <button class="left-button">Selecione um livro</button>
                 <button class="right-button">Publicar</button>
             </div>
     </section>
@@ -115,28 +119,7 @@
         </div>
         <p>@muricunha</p>
     </div>
-</section>
-    <section class="comment-list-section">
-        <h2>Amigos</h2>
-        <ul class="comment-list">
-            <li>
-                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 1">
-                <span class="comment-name">Murilo Santos</span>
-            </li>
-            <li>
-                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 2">
-                <span class="comment-name">Murilo Santos</span>
-            </li>
-            <li>
-                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 3">
-                <span class="comment-name">Murilo Santos</span>
-            </li>
-            <li>
-                <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 5">
-                <span class="comment-name">Murilo Santos</span>
-            </li>
-        </ul>
-    </section>
+
 <footer>
     <img class="logo-nome" src="images-logada/logoNome.png" alt="Imagem Logo">
 </footer>
