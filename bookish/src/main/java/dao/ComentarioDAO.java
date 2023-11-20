@@ -7,7 +7,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ComentarioDao {
+public class ComentarioDAO {
     public static boolean inserirComentario(Comentario obj) {
 
         boolean retorno = false;

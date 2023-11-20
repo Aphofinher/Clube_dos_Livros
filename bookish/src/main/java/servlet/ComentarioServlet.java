@@ -1,6 +1,6 @@
 package servlet;
 
-import dao.ComentarioDao;
+import dao.ComentarioDAO;
 import model.Comentario;
 
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class ComentarioServlet extends HttpServlet {
         int idUsuario = Integer.parseInt(req.getParameter("idUsuario"));
         String comentario = req.getParameter("comentario");
 
-        ArrayList<Comentario> comentarios = ComentarioDao.listarComentario(idUsuario, comentario);
+        ArrayList<Comentario> comentarios = ComentarioDAO.listarComentario(idUsuario, comentario);
 
         req.setAttribute("comentarios", comentarios);
 
@@ -35,7 +35,7 @@ public class ComentarioServlet extends HttpServlet {
         String comentario = req.getParameter("comentario");
         int idCategoria = Integer.parseInt(req.getParameter("idCategoria"));
 
-        boolean isCadastrado = ComentarioDao.inserirComentario(new Comentario(comentario, idUsuario, idCategoria));
+        boolean isCadastrado = ComentarioDAO.inserirComentario(new Comentario(comentario, idUsuario, idCategoria));
 
         if (isCadastrado) {
             // TODO lógica para sucesso no cadastro
@@ -52,7 +52,7 @@ public class ComentarioServlet extends HttpServlet {
         String comentario = req.getParameter("comentario");
         int idCategoria = Integer.parseInt(req.getParameter("idCategoria"));
 
-        boolean isAlterado = ComentarioDao.editarComentario(new Comentario(id, comentario, idUsuario, idCategoria));
+        boolean isAlterado = ComentarioDAO.editarComentario(new Comentario(id, comentario, idUsuario, idCategoria));
 
         if (isAlterado) {
             // TODO lógica para sucesso no cadastro
@@ -66,7 +66,7 @@ public class ComentarioServlet extends HttpServlet {
 
         int id = Integer.parseInt(req.getParameter("id"));
 
-        boolean isExcluido = ComentarioDao.excluirComentario(id);
+        boolean isExcluido = ComentarioDAO.excluirComentario(id);
 
         if (isExcluido) {
             // TODO lógica para sucesso no cadastro
