@@ -22,12 +22,29 @@ public class CreateUsuarioServlet extends HttpServlet {
         String usuarioNome = req.getParameter("nome");
         String usuarioEmail = req.getParameter("email");
         String usuarioSenha = req.getParameter("senha");
+        String categoriaUsuario = req.getParameter("categoria-usuario");
+        String usuarioLivro = req.getParameter("usuario-livro");
+        String redeSocial = req.getParameter("rede-social");
 
-        Usuario usuario = new Usuario( usuarioNome ,usuarioEmail, usuarioSenha);
+        Usuario usuario = new Usuario(usuarioNome, usuarioEmail, usuarioSenha,categoriaUsuario,usuarioLivro,redeSocial);
 
-        new UsuarioDAO().primeiroCadastroUsuario(usuario);
+        boolean isCadastrado = new UsuarioDAO().primeiroCadastroUsuario(usuario);
 
-        req.getRequestDispatcher("/login/login.jsp").forward(req, resp);
+
+        if (isCadastrado) {
+
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
+
+        } else {
+
+
+            req.setAttribute("erroCadastro", "Erro ao cadastrar !!");
+
+
+            req.getRequestDispatcher("cadastro/cadastro.jsp").forward(req, resp);
+
+
+        }
 
 
     }

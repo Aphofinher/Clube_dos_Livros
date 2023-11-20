@@ -46,8 +46,18 @@
     <section class="comments">
         <img align="left" src="../cadastro/img/foto-murilo.png">
         <div class="comments-file">
-        <span class="nomecomentuser">${Session.scope.Usuario.nome}</span>
+        <span class="nomecomentuser">Murilo Santos</span>
         </div>
+        <select>
+            <c:forEach var="categorias" items="${categoria}">
+
+                <option value="${categoria.id}">
+                    ${categoria.categoria}
+                </option>
+
+            </c:forEach>
+
+        </select>
         <textarea class="comment-box" placeholder="Digite seu comentário"></textarea>
             <div class="button-container">
                 <button class="left-button">Selecione um livro</button>
@@ -55,6 +65,20 @@
             </div>
     </section>
 
+<c:forEach var="comentario" items="${comentario}">
+    <tr>
+        <td>${comentario.comentario}</td>
+        <td>${car.name}</td>
+        <td>
+            <form action="/delete-car" method="post">
+                <input type="hidden" id="id" name="id" value="${car.id}">
+                <button type="submit">Delete</button>
+                <span> | </span>
+                <a href="index.jsp?id=${car.id}&name=${car.name}">Update</a>
+            </form>
+        </td>
+    </tr>
+</c:forEach>
 
 <section class="info-section">
     <img src="../images-index/livro-1.png" height="249" width="167"/>

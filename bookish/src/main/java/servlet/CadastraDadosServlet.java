@@ -25,9 +25,9 @@ public class CadastraDadosServlet extends HttpServlet {
 
         Usuario usuario = new Usuario(nome, instagram, categorias);
 
-        new UsuarioDAO().inserirUsuario(usuario);
+        boolean isCadastrado = new UsuarioDAO().inserirUsuario(usuario);
 
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+
 
 
     }

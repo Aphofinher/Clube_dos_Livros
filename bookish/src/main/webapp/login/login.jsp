@@ -33,7 +33,7 @@
 
     <p class="container-cadastro">Não tem cadastro?</p>
 
-    <button class="atu" style="background-color: #F0D69E; color: #796650"><a href="../cadastro/cadastro.html">Cadastre-se</a></button>
+    <button class="atu" style="background-color: #F0D69E; color: #796650"><a href="../cadastro/cadastro.jsp">Cadastre-se</a></button>
 </section>
 
 </body>
