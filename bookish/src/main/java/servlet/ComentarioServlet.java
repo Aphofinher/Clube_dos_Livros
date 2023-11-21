@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/cadastra-comentario")
 public class ComentarioServlet extends HttpServlet {
@@ -17,15 +18,12 @@ public class ComentarioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String idUsuario = req.getParameter("idUsuario");
-        String comentario = req.getParameter("comentario");
 
-        ArrayList<Comentario> comentarios = ComentarioDAO.listarComentario(idUsuario, comentario);
+        List<Comentario> comentario = new ComentarioDAO().listarComentario();
 
-        req.setAttribute("comentarios", comentarios);
+        req.setAttribute("comentarios", comentario);
 
-        req.getRequestDispatcher("").forward(req, resp);
-
+        req.getRequestDispatcher("logada/logada.jsp").forward(req, resp);
     }
 
     @Override
@@ -65,6 +63,8 @@ public class ComentarioServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
 
         int id = Integer.parseInt(req.getParameter("id"));
+
+
 
         boolean isExcluido = ComentarioDAO.excluirComentario(id);
 

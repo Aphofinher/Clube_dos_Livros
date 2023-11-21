@@ -24,7 +24,7 @@ public class ListarUsuarioServlet extends HttpServlet {
 
         req.setAttribute("nome", usuario);
 
-        req.getRequestDispatcher("../Logada/logada.jsp").forward(req, resp);
+        req.getRequestDispatcher("../logada/logada.jsp").forward(req, resp);
 
     }
 

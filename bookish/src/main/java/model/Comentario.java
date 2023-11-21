@@ -7,18 +7,22 @@ public class Comentario {
     private int id;
     private String comentario;
     private String email;
+
+    private String livro;
     private int idCategoria;
     private LocalDate dataComentario;
+
 
     public Comentario() {
     }
 
-    public Comentario(int id, String comentario, String email, int idCategoria, LocalDate dataComentario) {
-        this.id = id;
+    public Comentario(String comentario, String email, String livro, int idCategoria) {
+
         this.comentario = comentario;
         this.email = email;
+        this.livro = livro;
         this.idCategoria = idCategoria;
-        this.dataComentario = dataComentario;
+        this.dataComentario = LocalDate.now();
     }
 
     public int getId() {
@@ -43,6 +47,14 @@ public class Comentario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getLivro() {
+        return livro;
+    }
+
+    public void setLivro(String livro) {
+        this.livro = livro;
     }
 
     public int getIdCategoria() {

@@ -24,7 +24,7 @@ public class RetornaCategoriaServlet extends HttpServlet {
 
         req.setAttribute("categorias", categoria);
 
-        req.getRequestDispatcher("Logada/logada.jsp").forward(req, resp);
+        req.getRequestDispatcher("logada/logada.jsp").forward(req, resp);
 
 
     }

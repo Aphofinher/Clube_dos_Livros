@@ -10,7 +10,7 @@
 <body>
 
     <div class="logos">
-        <a href="../Logada/logada.jsp">
+        <a href="../logada/logada.jsp">
         <img src="img/voltar.png" class="logo-voltar">
         </a>
         <img src="img/logo-meio.png" class="logo-meio">

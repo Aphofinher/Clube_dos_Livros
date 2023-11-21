@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ComentarioDAO {
-    public static boolean inserirComentario(Comentario obj) {
+    public boolean inserirComentario(Comentario obj) {
 
         boolean retorno = false;
 
@@ -47,7 +47,7 @@ public class ComentarioDAO {
     }
 
 
-    public static boolean editarComentario(Comentario obj) {
+    public boolean editarComentario(Comentario obj) {
 
         boolean retorno = false;
 
@@ -115,7 +115,7 @@ public class ComentarioDAO {
         return retorno;
     }
 
-    public static ArrayList<Comentario> listarComentario(String email, String categoria) {
+    public ArrayList<Comentario> listarComentario() {
 
         ArrayList<Comentario> listaRetorno = new ArrayList<>();
         Connection conexao = null;
@@ -124,15 +124,12 @@ public class ComentarioDAO {
 
             conexao = ConnectionPoolConfig.getConnection();
 
-            // Passo 3 - Preparar o comando SQL
+
             PreparedStatement comandoSQL
                     = conexao.prepareStatement("SELECT * FROM comentario" +
-                    " WHERE id_usuario = ? AND categoria = ? ORDER BY data_comentario DESC");
+                    " WHERE email = ? AND categoria = ? ORDER BY data_comentario DESC");
 
-            comandoSQL.setString(1, email);
-            comandoSQL.setString(2, categoria);
 
-            // Passo 4 - Executar o comando
             ResultSet rs = comandoSQL.executeQuery();
 
             if (rs != null) {
@@ -143,11 +140,11 @@ public class ComentarioDAO {
 
                     obj.setId(rs.getInt("id"));
                     obj.setComentario(rs.getString("comentario"));
-                    obj.setEmail(rs.getString("id_usuario"));
-                    obj.setIdCategoria(rs.getInt("id_categoria"));
+                    obj.setEmail(rs.getString("email"));
+                    obj.setIdCategoria(rs.getInt("id-categoria"));
                     obj.setDataComentario(LocalDate.parse(rs.getDate("data_comentario").toString()));
 
-                    //Passo o objeto para a lista de retorno
+
                     listaRetorno.add(obj);
 
                 }

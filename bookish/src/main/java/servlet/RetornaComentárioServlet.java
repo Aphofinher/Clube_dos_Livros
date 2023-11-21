@@ -20,12 +20,12 @@ public class RetornaComentárioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
-        String email = req.getParameter("email");
-        String categoria = req.getParameter("categoria");
 
-        List<Comentario> comentario = new ComentarioDAO().listarComentario(email, categoria);
+        List<Comentario> comentario = new ComentarioDAO().listarComentario();
 
-        req.setAttribute("comentario", comentario);
+        req.setAttribute("comentarios", comentario);
+
+        req.getRequestDispatcher("logada/logada.jsp").forward(req, resp);
 
 
     }

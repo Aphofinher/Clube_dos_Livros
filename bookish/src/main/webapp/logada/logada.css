@@ -137,13 +137,14 @@ font-size: 18px;
     justify-content: space-around;
 }
 
-.left-button, .right-button {
+.right-button {
     background-color: #8B4513;
     color: #fff;
     padding: 10px 65px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+
 }
 
 .nomecomentuser{
@@ -259,7 +260,7 @@ button[type="submit"] img {
         .info-section-text button {
             margin-left: auto; /* Isso empurra o botão para a direita */
         }
-   }
+
 
 button > .button-info{
     background-color: transparent;

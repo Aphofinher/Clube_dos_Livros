@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../Logada/logada.css">
+    <link rel="stylesheet" href="../logada/logada.css">
 
     <title>Tela Logada</title>
 
@@ -16,7 +16,7 @@
 <body>
 <header>
     <div class="header-social">
-        <img class="logo-nome" src="images-logada/logoNome.png" alt="Imagem Logo">
+        <img class="logo-nome" src="../logada/images-logada/logoNome.png" alt="Imagem Logo">
     </div>
 
 </header>
@@ -66,7 +66,6 @@
     </form>
     <textarea class="comment-box" placeholder="Digite seu comentário"></textarea>
     <div class="button-container">
-        <button class="left-button">Selecione um livro</button>
         <button class="right-button">Publicar</button>
     </div>
 </section>
@@ -128,29 +127,8 @@
         <p>@muricunha</p>
     </div>
 </section>
-<section class="comment-list-section">
-    <h2>Amigos</h2>
-    <ul class="comment-list">
-        <li>
-            <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 1">
-            <span class="comment-name">Murilo Santos</span>
-        </li>
-        <li>
-            <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 2">
-            <span class="comment-name">Murilo Santos</span>
-        </li>
-        <li>
-            <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 3">
-            <span class="comment-name">Murilo Santos</span>
-        </li>
-        <li>
-            <img class="round-photo" src="../cadastro/img/foto-murilo.png" alt="Foto 5">
-            <span class="comment-name">Murilo Santos</span>
-        </li>
-    </ul>
-</section>
 <footer>
-    <img class="logo-nome" src="images-logada/logoNome.png" alt="Imagem Logo">
+    <img class="logo-nome" src="../logada/images-logada/logoNome.png" alt="Imagem Logo">
 </footer>
 
 </body>
