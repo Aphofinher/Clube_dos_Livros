@@ -10,56 +10,35 @@ import model.Usuario;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        req.getRequestDispatcher("/login/login.jsp").forward(req, resp);
-
-    }
+@WebServlet("/exibir-por-categoria")
+public class FiltrarPorCategoriaServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int categoriaId = Integer.parseInt(req.getParameter("categoriaId"));
 
-        String email = req.getParameter("email");
-        String senha = req.getParameter("senha");
+        preencheAtributosBase(req, categoriaId);
+        buscaUsuarioLogado(req);
 
-        Usuario usuario = new Usuario(email, senha);
-
-        boolean isValidUser = new UsuarioDAO().verificaCredenciais(usuario);
-
-        if (isValidUser) {
-            req.getSession().setAttribute("loggedUser", email);
-            buscaUsuarioLogado(req, email);
-            preencheAtributosBase(req, email);
-
-            req.getRequestDispatcher("logada/logada.jsp").forward(req, resp);
-
-        } else {
-
-            req.setAttribute("aviso", "Usuário ou senha inválidos!!");
-
-            req.getRequestDispatcher("login/login.jsp").forward(req, resp);
-
-        }
-
+        req.getRequestDispatcher("logada/logada.jsp").forward(req, resp);
     }
 
-    private void buscaUsuarioLogado(HttpServletRequest req, String email) {
+    private void buscaUsuarioLogado(HttpServletRequest req) {
+        String email = req.getSession().getAttribute("loggedUser").toString();
         Usuario usuarioLogado = new UsuarioDAO().buscarUsuario(email);
         req.setAttribute("usuarioLogado", usuarioLogado);
     }
 
-    private void preencheAtributosBase(HttpServletRequest req, String email) {
+    private void preencheAtributosBase(HttpServletRequest req, int categoriaId) {
         ArrayList<Categoria> categorias = new CategoriaDAO().listarCategoria();
-        ArrayList<Comentario> comentarios = new ComentarioDAO().listarComentario(email);
+        ArrayList<Comentario> comentarios = new ComentarioDAO().listarComentario(categoriaId);
         List<ComentarioTO> comentarioView = preencherTO(comentarios);
 
         req.setAttribute("categorias", categorias);
@@ -75,6 +54,5 @@ public class LoginServlet extends HttpServlet {
         });
         return comentarioView;
     }
-
 
 }

@@ -18,10 +18,9 @@ public class ComentarioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        //List<Comentario> comentario = new ComentarioDAO().listarComentario();
 
-        List<Comentario> comentario = new ComentarioDAO().listarComentario();
-
-        req.setAttribute("comentarios", comentario);
+        //req.setAttribute("comentarios", comentario);
 
         req.getRequestDispatcher("logada/logada.jsp").forward(req, resp);
     }

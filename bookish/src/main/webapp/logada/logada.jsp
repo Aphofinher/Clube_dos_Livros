@@ -24,112 +24,86 @@
     <ul class="menu-esquerdo">
         <li><a href="../atualizar/atualizar.jsp">Perfil</a></li>
         <hr>
-        <li><a href="#">Meus comentários</a></li>
+        <li>Meus comentários</li>
         <hr>
-        <li><a href="#">Ação e Aventura</a></li>
+        <li onclick="enviarDadosCategoria(7)">Ação e Aventura</li>
         <hr>
-        <li><a href="#">Biografia</a></li>
+        <li onclick="enviarDadosCategoria(8)">Biografia</li>
         <hr>
-        <li><a href="#">Clássicos</a></li>
+        <li onclick="enviarDadosCategoria(1)">Clássicos</li>
         <hr>
-        <li><a href="#">Drama</a></li>
+        <li onclick="enviarDadosCategoria(6)">Drama</li>
         <hr>
-        <li><a href="#">Finanças</a></li>
+        <li onclick="enviarDadosCategoria(3)">Finanças</li>
         <hr>
-        <li><a href="#">Psicologia</a></li>
+        <li onclick="enviarDadosCategoria(2)">Psicologia</li>
         <hr>
-        <li><a href="#">Romance</a></li>
+        <li onclick="enviarDadosCategoria(4)">Romance</li>
         <hr>
-        <li><a href="#">Terror</a></li>
+        <li onclick="enviarDadosCategoria(5)">Terror</li>
         <hr>
         <li><a href="../index.jsp">Sair</a></li>
     </ul>
 </div>
 
 <section class="comments">
-    <img align="left" src="../cadastro/img/foto-murilo.png">
     <div class="comments-file">
-        <span class="nomecomentuser">Murilo Santos</span>
+        <span class="nomecomentuser">${usuarioLogado.nome}</span>
     </div>
 
 
-    <form action="/retorna-categoria">
+    <form method="post" action="/create-comentario">
         <label> Selecione uma categoria:</label>
-        <select name="categoria-select" id="categoria-select">
+        <select name="categoria">
 
             <c:forEach var="categoria" items="${categorias}">
                 <option value="${categoria.id}">${categoria.categoria}</option>
             </c:forEach>
 
         </select>
-
+        <label> Insira o nome do Livro:</label>
+        <input class="seleciona-livro" type="text" id="livro" placeholder="Livro:" name="livro">
+        <textarea class="comment-box" placeholder="Digite seu comentário" name="comentario"></textarea>
+        <p style="color: red">${erroComentario}</p>
+        <div class="button-container">
+            <button class="right-button">Publicar</button>
+        </div>
     </form>
-    <textarea class="comment-box" placeholder="Digite seu comentário"></textarea>
-    <div class="button-container">
-        <button class="right-button">Publicar</button>
-    </div>
+
+    <form id="enviarPorCategoria" method="post" action="/exibir-por-categoria">
+        <input id="categoriaInput" type="hidden" name="categoriaId">
+    </form>
+
 </section>
 
-<c:forEach var="comentario" items="${comentario}">
-    <tr>
-        <td>${comentario.comentario}</td>
-        <td>${car.name}</td>
-        <td>
-            <form action="/delete-car" method="post">
-                <input type="hidden" id="id" name="id" value="${car.id}">
-                <button type="submit">Delete</button>
-                <span> | </span>
-                <a href="index.jsp?id=${car.id}&name=${car.name}">Update</a>
-            </form>
-        </td>
-    </tr>
+<c:forEach var="comentario" items="${comentarios}">
+    <section class="info-section">
+        <img src="../images-index/livro-1.png" height="249" width="167"/>
+        <div class="info-section-text">
+            <h1>${comentario.nome} Comentou:</h1>
+            <div class="info-section-text-button">
+                <p>${comentario.comentario}.</p>
+                <button class="button-info"></button>
+            </div>
+            <p>${comentario.redeSocial}</p>
+        </div>
+        <p style="color: red">Nome do livro: ${comentario.livro}</p>
+    </section>
 </c:forEach>
 
-<section class="info-section">
-    <img src="../images-index/livro-1.png" height="249" width="167"/>
-    <div class="info-section-text">
-        <h1>Murilo Comentou:</h1>
-        <div class="info-section-text-button">
-            <p>individual. Mesmo décadas após sua publicação, o livro permanece relevante e impactante, lembrando-nos da
-                importância da vigilância constante em relação ao poder e à política. É uma leitura essencial para
-                qualquer pessoa interessada em ficção distópica e crítica social.</p>
-
-            <button class="button-info"><img src="images-logada/conectarButton.png"></button>
-        </div>
-        <p>@muricunha</p>
-    </div>
-</section>
-
-<section class="info-section">
-    <img src="../images-index/livro-1.png" height="249" width="167"/>
-    <div class="info-section-text">
-        <h1>Murilo Comentou:</h1>
-        <div class="info-section-text-button">
-            <p>individual. Mesmo décadas após sua publicação, o livro permanece relevante e impactante, lembrando-nos da
-                importância da vigilância constante em relação ao poder e à política. É uma leitura essencial para
-                qualquer pessoa interessada em ficção distópica e crítica social.</p>
-            <button class="button-info"><img src="images-logada/conectarButton.png"></button>
-        </div>
-        <p>@muricunha</p>
-    </div>
-</section>
-
-<section class="info-section">
-    <img src="../images-index/livro-1.png" height="249" width="167"/>
-    <div class="info-section-text">
-        <h1>Murilo Comentou:</h1>
-        <div class="info-section-text-button">
-            <p>individual. Mesmo décadas após sua publicação, o livro permanece relevante e impactante, lembrando-nos da
-                importância da vigilância constante em relação ao poder e à política. É uma leitura essencial para
-                qualquer pessoa interessada em ficção distópica e crítica social.</p>
-            <button class="button-info"><img src="images-logada/conectarButton.png"></button>
-        </div>
-        <p>@muricunha</p>
-    </div>
-</section>
 <footer>
     <img class="logo-nome" src="../logada/images-logada/logoNome.png" alt="Imagem Logo">
 </footer>
 
 </body>
 </html>
+
+<script>
+    function enviarDadosCategoria(categoriaId) {
+        let categoria = document.getElementById('categoriaInput');
+        let form = document.getElementById('enviarPorCategoria');
+        categoria.value = categoriaId;
+
+        form.submit();
+    }
+</script>

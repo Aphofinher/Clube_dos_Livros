@@ -20,8 +20,9 @@ public class RetornaComentárioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
+        String email = req.getSession().getAttribute("loggedUser").toString();
 
-        List<Comentario> comentario = new ComentarioDAO().listarComentario();
+        List<Comentario> comentario = new ComentarioDAO().listarComentario(email);
 
         req.setAttribute("comentarios", comentario);
 

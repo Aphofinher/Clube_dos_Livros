@@ -46,7 +46,7 @@ public class UsuarioDAO {
         } catch (ClassNotFoundException ex) {
             System.out.println("Erro ao carregar o Driver");
         } catch (SQLException ex) {
-            System.out.println("Erro no SQL"+ex.getMessage());
+            System.out.println("Erro no SQL" + ex.getMessage());
         }
 
         return retorno;
@@ -74,11 +74,11 @@ public class UsuarioDAO {
             System.out.println("sucesso ao executar query");
             while (rs.next()) {
 
-            String email = rs.getString("email");
-            String senha = rs.getString("senha");
+                String email = rs.getString("email");
+                String senha = rs.getString("senha");
 
-            if(senha.equals(user.getSenha()) && email.equals(user.getEmail())){
-                return true;
+                if (senha.equals(user.getSenha()) && email.equals(user.getEmail())) {
+                    return true;
                 }
             }
 
@@ -96,9 +96,9 @@ public class UsuarioDAO {
     }
 
 
-    public static ArrayList<Usuario> listarUsuario(String nome) {
+    public Usuario buscarUsuario(String email) {
 
-        ArrayList<Usuario> listaRetorno = new ArrayList<>();
+        Usuario obj = null;
         Connection conexao = null;
 
         try {
@@ -108,9 +108,9 @@ public class UsuarioDAO {
             // Passo 3 - Preparar o comando SQL
             PreparedStatement comandoSQL
                     = conexao.prepareStatement("SELECT * FROM usuario" +
-                    " WHERE nome like ?");
+                    " WHERE email = ?");
 
-            comandoSQL.setString(1, nome);
+            comandoSQL.setString(1, email);
 
             // Passo 4 - Executar o comando
             ResultSet rs = comandoSQL.executeQuery();
@@ -119,16 +119,12 @@ public class UsuarioDAO {
 
                 while (rs.next()) {
 
-                    Usuario obj = new Usuario();
+                    obj = new Usuario();
 
                     obj.setNome(rs.getString("nome"));
                     obj.setEmail(rs.getString("email"));
                     obj.setSenha(rs.getString("senha"));
                     obj.setRedeSocial(rs.getString("redeSocial"));
-
-
-                    //Passo o objeto para a lista de retorno
-                    listaRetorno.add(obj);
 
                 }
             }
@@ -139,7 +135,7 @@ public class UsuarioDAO {
             System.out.println("Erro no SQL");
         }
 
-        return listaRetorno;
+        return obj;
     }
 
 

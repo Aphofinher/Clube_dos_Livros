@@ -20,9 +20,9 @@ public class ListarUsuarioServlet extends HttpServlet {
 
         String nome = req.getParameter("nome");
 
-        List<Usuario> usuario = new UsuarioDAO().listarUsuario(nome);
+        //List<Usuario> usuario = new UsuarioDAO().listarUsuario(nome);
 
-        req.setAttribute("nome", usuario);
+        //req.setAttribute("nome", usuario);
 
         req.getRequestDispatcher("../logada/logada.jsp").forward(req, resp);
 
