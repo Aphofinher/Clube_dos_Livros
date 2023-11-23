@@ -22,9 +22,7 @@
 </header>
 <div id="menu">
     <ul class="menu-esquerdo">
-        <li><a href="../atualizar/atualizar.jsp">Perfil</a></li>
-        <hr>
-        <li>Meus comentários</li>
+        <li onclick="enviarRequisicao()">Perfil</li>
         <hr>
         <li onclick="enviarDadosCategoria(7)">Ação e Aventura</li>
         <hr>
@@ -95,6 +93,9 @@
     <img class="logo-nome" src="../logada/images-logada/logoNome.png" alt="Imagem Logo">
 </footer>
 
+<form id="enviarRequisicao" method="get" action="/alterar-usuario">
+</form>
+
 </body>
 </html>
 
@@ -104,6 +105,11 @@
         let form = document.getElementById('enviarPorCategoria');
         categoria.value = categoriaId;
 
+        form.submit();
+    }
+
+    function enviarRequisicao() {
+        let form = document.getElementById('enviarRequisicao');
         form.submit();
     }
 </script>

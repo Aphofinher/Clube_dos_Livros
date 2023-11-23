@@ -61,7 +61,6 @@ public class LoginServlet extends HttpServlet {
         ArrayList<Categoria> categorias = new CategoriaDAO().listarCategoria();
         ArrayList<Comentario> comentarios = new ComentarioDAO().listarComentario(email);
         List<ComentarioTO> comentarioView = preencherTO(comentarios);
-
         req.setAttribute("categorias", categorias);
         req.setAttribute("comentarios", comentarioView);
     }

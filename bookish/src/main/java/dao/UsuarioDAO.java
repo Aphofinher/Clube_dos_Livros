@@ -180,7 +180,7 @@ public class UsuarioDAO {
     }
 
 
-    public boolean alterarUsuario(Usuario Obj) {
+    public boolean alterarUsuario(Usuario obj) {
 
         boolean retorno = false;
 
@@ -198,10 +198,11 @@ public class UsuarioDAO {
             PreparedStatement comandoSQL
                     = conexao.prepareStatement(SQL);
 
-            comandoSQL.setString(1, Obj.getNome());
-            comandoSQL.setString(2, Obj.getEmail());
-            comandoSQL.setString(3, Obj.getSenha());
-            comandoSQL.setString(4, Obj.getRedeSocial());
+            comandoSQL.setString(1, obj.getNome());
+            comandoSQL.setString(2, obj.getEmail());
+            comandoSQL.setString(3, obj.getSenha());
+            comandoSQL.setString(4, obj.getRedeSocial());
+            comandoSQL.setString(5, obj.getEmail());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 

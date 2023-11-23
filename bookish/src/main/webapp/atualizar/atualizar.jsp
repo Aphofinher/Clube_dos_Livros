@@ -5,29 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="atualizar.css">
+    <link rel="stylesheet" href="../atualizar/atualizar.css">
 </head>
 <body>
 
     <div class="logos">
-        <a href="../logada/logada.jsp">
-        <img src="img/voltar.png" class="logo-voltar">
-        </a>
-        <img src="img/logo-meio.png" class="logo-meio">
+        <img  onclick="mandarRequisicaoServlet()" src="../atualizar/img/voltar.png" class="logo-voltar">
+        <img src="../atualizar/img/logo-meio.png" class="logo-meio">
     </div>
 
     <section class="container">
         <h1>Atualizar Meus Dados</h1>
+        <form action ="/alterar-usuario" method="post">
         <div class="forms">
-            <input type="text" placeholder="Seu nome:" id="nome" name="nome">
-            <input type="text" placeholder="E-mail:" id="email" name="email">
-            <input type="text" placeholder="Instagram:" id="rede-social" name="rede-social">
-            <input type="password" placeholder="Senha:" id="senha" name="senha">
+            <input type="text" placeholder="Seu nome:" id="nome" name="nome" value="${usuario.nome}" >
+            <input type="text" placeholder="E-mail:" id="email" name="email" value="${usuario.email}">
+            <input type="text" placeholder="Instagram:" id="rede-social" name="rede-social" value="${usuario.redeSocial}">
+            <input type="password" placeholder="Senha:" id="senha" name="senha" value="${usuario.senha}">
             <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
         </div>
 
-        <button class="atu" role="button">Atualizar</button>
+            <button class="atu" type="submit" role="button">Atualizar</button>
+        </form>
+
     </section>
+
+    <form id="enviarRequisicao" method="post" action="/login">
+        <input type="hidden" name="email" value="${usuario.email}" >
+        <input type="hidden" name="senha" value="${usuario.senha}">
+    </form>
 
 </body>
 </html>
+
+<script>
+    function mandarRequisicaoServlet() {
+        let form = document.getElementById('enviarRequisicao');
+        form.submit();
+    }
+</script>

@@ -25,8 +25,10 @@
             <input type="password" placeholder="Senha:" id="senha" name="senha">
             <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
             <button class="atu" type="submit" role="button">Cadastre-se</button>
+
         </div>
         <p style="text-align: center">${erroCadastro}</p>
+
 
     </section>
 </form>
