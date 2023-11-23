@@ -52,41 +52,35 @@
 </section>
 
 
-<p class="info-comment">Principais comentários</p>
+<p class="info-comment">Feedbacks</p>
 
 
 </section>
 <section class="comments">
 
-    <img align="left" src="/images-index/imagem-comments.png">
     <p class="aspasinicio">❝</p>
-    <p>Achei incrível esse site, fiz diversos amigos!!!</p>
+    <p>Tenho descoberto bons livros para ler graças ao Bookish!!!</p>
     <p align="right" class="aspasfinal">❞</p>
     <span class="nomecomentuser">Ygor Gomes</span>
 
 </section>
 
-<p class="info-comment">Com seus livros, faça novos amigos!</p>
-<section class="container-connect">
-    <div class="connect">
-        <img src="/images-index/imagem-comments.png">
-        <div class="main-connect">
-            <p>Conectou-se</p>
-            <img src="/images-index/icon-vai-volta.png">
-        </div>
-        <img src="/images-index/imagem-comments.png">
-    </div>
+<section class="comments">
+
+    <p class="aspasinicio">❝</p>
+    <p>Estou conhecendo varios leitores e adquirindo conversas sobre as obras!!!</p>
+    <p align="right" class="aspasfinal">❞</p>
+    <span class="nomecomentuser">Murilo Santos</span>
+
 </section>
 
-<section class="container-connect">
-    <div class="connect">
-        <img src="/images-index/imagem-comments.png">
-        <div class="main-connect">
-            <p>Conectou-se</p>
-            <img src="/images-index/icon-vai-volta.png">
-        </div>
-        <img src="/images-index/imagem-comments.png">
-    </div>
+<section class="comments">
+
+    <p class="aspasinicio">❝</p>
+    <p>Bookish, o melhor com certeza!!! s2</p>
+    <p align="right" class="aspasfinal">❞</p>
+    <span class="nomecomentuser">Pedro Pereira</span>
+
 </section>
 
 <footer>
