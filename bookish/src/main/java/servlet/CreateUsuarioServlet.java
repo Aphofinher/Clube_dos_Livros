@@ -33,13 +33,14 @@ public class CreateUsuarioServlet extends HttpServlet {
 
         if (isCadastrado) {
 
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            req.setAttribute("cadastrado", "Cadastro realizado com sucesso!");
+
+            req.getRequestDispatcher("login/login.jsp").forward(req, resp);
 
         } else {
 
 
-            req.setAttribute("erroCadastro", "Erro ao cadastrar !!");
-
+            req.setAttribute("erroCadastro", "Email já cadastrado!");
 
             req.getRequestDispatcher("cadastro/cadastro.jsp").forward(req, resp);
 
@@ -47,7 +48,8 @@ public class CreateUsuarioServlet extends HttpServlet {
         }} else {
 
             req.setAttribute("erroCadastro", "As senhas não coincidem!");
-            req.getRequestDispatcher("/cadastro/cadastro.jsp");
+
+            req.getRequestDispatcher("cadastro/cadastro.jsp");
 
 
         }

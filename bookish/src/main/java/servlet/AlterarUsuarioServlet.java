@@ -38,10 +38,19 @@ public class AlterarUsuarioServlet extends HttpServlet {
             new UsuarioDAO().alterarUsuario(usuario);
             preencheAtributosBase(req, email);
 
-            req.setAttribute("confirma-alteração", "Usuario alterado com sucesso!");
+            req.setAttribute("alteracao", "Usuario alterado com sucesso!");
+
+            req.getRequestDispatcher("atualizar/atualizar.jsp").forward(req, resp);
+
         } else {
-            req.setAttribute("erro-alteração", "As senhas não coincidem!");
-            req.getRequestDispatcher("atualizar/atualizar.jsp");
+
+            String usuarioEmail = req.getSession().getAttribute("loggedUser").toString();
+            Usuario usuario = new UsuarioDAO().buscarUsuario(usuarioEmail);
+            req.setAttribute("usuario", usuario);
+
+            req.setAttribute("alteracao", "As senhas não coincidem!");
+
+            req.getRequestDispatcher("atualizar/atualizar.jsp").forward(req, resp);
 
         }
     }

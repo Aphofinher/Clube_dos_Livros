@@ -13,9 +13,9 @@
 
 <div class="logos">
     <a href="../index.jsp">
-        <img src="img/voltar.png" class="logo-voltar">
+        <img src="../login/img/voltar.png" class="logo-voltar">
     </a>
-    <img src="img/logo-meio.png" class="logo-meio">
+    <img src="../login/img/logo-meio.png" class="logo-meio">
 </div>
 
 
@@ -26,6 +26,7 @@
         <input type="email" placeholder="Email" id="email" name="email" required/>
         <input type="password" placeholder="Senha" id="senha" name="senha" required/>
         <p>${aviso}</p>
+        <p>${cadastrado}</p>
     </div>
     <button class="atu" type="submit">Entrar</button>
 </form>

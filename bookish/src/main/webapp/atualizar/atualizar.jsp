@@ -26,6 +26,8 @@
         </div>
 
             <button class="atu" type="submit" role="button">Atualizar</button>
+            <p style="color: green">${alteracao}</p>
+
         </form>
 
     </section>
