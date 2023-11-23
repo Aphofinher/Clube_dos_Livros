@@ -79,7 +79,25 @@
     <p class="aspasinicio">❝</p>
     <p>Bookish, o melhor com certeza!!! s2</p>
     <p align="right" class="aspasfinal">❞</p>
-    <span class="nomecomentuser">Pedro Pereira</span>
+    <span class="nomecomentuser">Schevechenco</span>
+
+</section>
+
+<section class="comments">
+
+    <p class="aspasinicio">❝</p>
+    <p>Adorei a proposta do site! Facilita muito a busca por novos livros e autores. A navegação é simples e eficiente, tornando a descoberta de novas leituras uma experiência prazerosa.</p>
+    <p align="right" class="aspasfinal">❞</p>
+    <span class="nomecomentuser">Lucas Freire</span>
+
+</section>
+
+<section class="comments">
+
+    <p class="aspasinicio">❝</p>
+    <p>Ótima iniciativa para conectar leitores a novos horizontes literários!</p>
+    <p align="right" class="aspasfinal">❞</p>
+    <span class="nomecomentuser">Kelvin Oliveira</span>
 
 </section>
 
