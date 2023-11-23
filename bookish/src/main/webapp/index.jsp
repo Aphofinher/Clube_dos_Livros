@@ -17,7 +17,7 @@
     <div class="image-button">
         <img class="logo-nome" src="/images-index/logoNome.png" alt="Imagem Logo">
 
-        <button class="button"><a href="login/login.jsp">Login/Cadastre-se</a></button>
+        <a href="login/login.jsp"><button class="button">Login/Cadastre-se</button></a>
 
     </div>
     <hr>
