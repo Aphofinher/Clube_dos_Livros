@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class UsuarioDAO {
@@ -136,6 +137,46 @@ public class UsuarioDAO {
         }
 
         return obj;
+    }
+
+    public List<Usuario> buscarUsuarios() {
+
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        Connection conexao = null;
+
+        try {
+
+            conexao = ConnectionPoolConfig.getConnection();
+
+            // Passo 3 - Preparar o comando SQL
+            PreparedStatement comandoSQL
+                    = conexao.prepareStatement("SELECT * FROM usuario");
+
+            // Passo 4 - Executar o comando
+            ResultSet rs = comandoSQL.executeQuery();
+
+            if (rs != null) {
+
+                while (rs.next()) {
+
+                    Usuario obj = new Usuario();
+
+                    obj.setNome(rs.getString("nome"));
+                    obj.setEmail(rs.getString("email"));
+                    obj.setSenha(rs.getString("senha"));
+                    obj.setRedeSocial(rs.getString("redeSocial"));
+
+                    listaUsuarios.add(obj);
+                }
+            }
+
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Erro ao carregar o Driver");
+        } catch (SQLException ex) {
+            System.out.println("Erro no SQL");
+        }
+
+        return listaUsuarios;
     }
 
 

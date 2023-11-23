@@ -69,10 +69,15 @@ public class LoginServlet extends HttpServlet {
     private List<ComentarioTO> preencherTO(ArrayList<Comentario> comentarios) {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         List<ComentarioTO> comentarioView = new ArrayList<>();
-        comentarios.forEach(comentario -> {
-            Usuario usuario = usuarioDAO.buscarUsuario(comentario.getEmail());
-            comentarioView.add(new ComentarioTO(usuario.getNome(), comentario.getComentario(), usuario.getRedeSocial(), comentario.getLivro()));
-        });
+        List<Usuario> usuarios = usuarioDAO.buscarUsuarios();
+
+        for (Comentario comentario : comentarios) {
+            for (Usuario usuario : usuarios) {
+                if (comentario.getEmail().equals(usuario.getEmail())) {
+                    comentarioView.add(new ComentarioTO(usuario.getNome(), comentario.getComentario(), usuario.getRedeSocial(), comentario.getLivro()));
+                }
+            }
+        }
         return comentarioView;
     }
 
