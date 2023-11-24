@@ -5,8 +5,6 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private String categoriaUsuario;
-    private String livros;
     private String redeSocial;
 
     public Usuario(String email, String senha) {
@@ -14,15 +12,17 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Usuario(String nome, String email, String senha, int id, String categoriaUsuario, String livros, String redeSocial) {
+    public Usuario(String nome, String email, String senha, String redeSocial) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.categoriaUsuario = categoriaUsuario;
-        this.livros = livros;
         this.redeSocial = redeSocial;
+    }
 
-
+    public Usuario(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
     }
 
     public Usuario() {
@@ -52,22 +52,6 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getCategoriaUsuario() {
-        return categoriaUsuario;
-    }
-
-    public void setCategoriaUsuario(String categoriaUsuario) {
-        this.categoriaUsuario = categoriaUsuario;
-    }
-
-    public String getLivros() {
-        return livros;
-    }
-
-    public void setLivros(String livros) {
-        this.livros = livros;
-    }
-
     public String getRedeSocial() {
         return redeSocial;
     }
@@ -76,3 +60,5 @@ public class Usuario {
         this.redeSocial = redeSocial;
     }
 }
+
+
