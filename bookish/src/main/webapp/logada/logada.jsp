@@ -60,8 +60,8 @@
 
         </select>
         <label> Insira o nome do Livro:</label>
-        <input class="seleciona-livro" type="text" id="livro" placeholder="Livro:" name="livro">
-        <textarea class="comment-box" placeholder="Digite seu comentário" name="comentario"></textarea>
+        <input class="seleciona-livro" type="text" id="livro" placeholder="Livro:" name="livro" required>
+        <textarea class="comment-box" placeholder="Digite seu comentário" name="comentario" required></textarea>
         <p style="color: red">${erroComentario}</p>
         <div class="button-container">
             <button class="right-button">Publicar</button>

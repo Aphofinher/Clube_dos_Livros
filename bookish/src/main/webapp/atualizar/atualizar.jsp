@@ -30,9 +30,14 @@
 
         </form>
 
+        <form action="/deletar-usuario" method="post">
+            <input type="hidden" name="email" value="${usuario.email}">
+            <button class="atu" type="submit" role="button">Excluir</button>
+        </form>
+
     </section>
 
-    <form id="enviarRequisicao" method="post" action="/login">
+    <form id="enviarRequisicao" method="post" action="../logada/logada.jsp">
         <input type="hidden" name="email" value="${usuario.email}" >
         <input type="hidden" name="senha" value="${usuario.senha}">
     </form>

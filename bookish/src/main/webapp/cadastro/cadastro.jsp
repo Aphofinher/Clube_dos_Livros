@@ -19,11 +19,11 @@
     <section class="main">
         <h1>Cadastro</h1>
         <div class="forms">
-            <input type="text" placeholder="Seu nome:" id="nome" name="nome">
-            <input type="text" placeholder="E-mail:" id="email" name="email">
-            <input type="text" placeholder="Instagram:" id="rede-social" name="rede-social">
-            <input type="password" placeholder="Senha:" id="senha" name="senha">
-            <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha">
+            <input type="text" placeholder="Seu nome:" id="nome" name="nome" required>
+            <input type="text" placeholder="E-mail:" id="email" name="email" required>
+            <input type="text" placeholder="Instagram:" id="rede-social" name="rede-social" required>
+            <input type="password" placeholder="Senha:" id="senha" name="senha" required>
+            <input type="password" placeholder="Confirme Senha:" id="confirmaSenha" name="confirmaSenha" required>
             <button class="atu" type="submit" role="button">Cadastre-se</button>
 
         </div>

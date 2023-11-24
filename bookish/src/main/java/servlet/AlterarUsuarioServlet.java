@@ -64,6 +64,14 @@ public class AlterarUsuarioServlet extends HttpServlet {
         req.getRequestDispatcher("atualizar/atualizar.jsp").forward(req, resp);
     }
 
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
+
+
+
+    }
+
     private void preencheAtributosBase(HttpServletRequest req, String email) {
 
         ArrayList<Comentario> comentarios = new ComentarioDAO().listarComentario(email);
@@ -85,6 +93,8 @@ public class AlterarUsuarioServlet extends HttpServlet {
         }
         return comentarioView;
     }
+
+
 
 
 }

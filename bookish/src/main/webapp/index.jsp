@@ -21,6 +21,8 @@
 
     </div>
     <hr>
+    <h1>${deletado}</h1>
+    <hr>
     <p class="subtitle">A rede social dos livros.</p>
 </header>
 

@@ -10,7 +10,7 @@ public class Comentario {
 
     private String livro;
     private int idCategoria;
-    private LocalDate dataComentario;
+
 
 
     public Comentario() {
@@ -22,7 +22,7 @@ public class Comentario {
         this.email = email;
         this.livro = livro;
         this.idCategoria = idCategoria;
-        this.dataComentario = LocalDate.now();
+
     }
 
     public int getId() {
@@ -65,11 +65,5 @@ public class Comentario {
         this.idCategoria = idCategoria;
     }
 
-    public LocalDate getDataComentario() {
-        return dataComentario;
-    }
 
-    public void setDataComentario(LocalDate dataComentario) {
-        this.dataComentario = dataComentario;
-    }
 }
